@@ -10,16 +10,19 @@ import {
     navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu"
 
-const pages: { title: string; href: string; }[] = [
+const pages: { id: number, title: string; href: string; }[] = [
     {
+        id: 1,
         title: "Présentation",
         href: "/presentation"
     },
     {
+        id: 2,
         title: "Les races",
         href: "/races"
     },
     {
+        id: 3,
         title: "Les classes",
         href: "/classes"
     }
@@ -31,7 +34,7 @@ export function Navigation() {
             <NavigationMenu>
                 <NavigationMenuList>
                     { pages.map(page => (
-                        <NavigationMenuItem>
+                        <NavigationMenuItem key={page.id}>
                             <NavigationMenuLink
                                 href={page.href}
                                 className={navigationMenuTriggerStyle()}

@@ -19,18 +19,29 @@ export const Footer = () => {
                 src="/images/eindhill_logo.png"
                 alt="eindhill_logo"
             />
-            <a
-                href="https://discord.gg/ME3Hbfty"
-                className="
-                    flex
-                    gap-4
-                    mr-3
-                    text-2xl
-                    md:text-4xl"
+
+            <span
+                className="flex gap-4 mr-3"
             >
-                <i className="fa-brands fa-discord"></i>
-                <i className="fa-brands fa-instagram"></i>
-            </a>
+                <a
+                    href="https://discord.gg/ME3Hbfty"
+                    target="_blank"
+                    className="
+                        text-2xl
+                        md:text-4xl"
+                >
+                    <i className="fa-brands fa-discord"></i>
+                </a>
+                <a
+                    href="https://www.instagram.com/eindhill?igsh=MWt3cHIxZ3libDhtZQ=="
+                    target="_blank"
+                    className="
+                        text-2xl
+                        md:text-4xl"
+                >
+                    <i className="fa-brands fa-instagram"></i>
+                </a>
+            </span>
         </footer>
     )
 }
