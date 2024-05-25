@@ -1,6 +1,7 @@
 "use client"
 
 import * as React from "react"
+import { Social } from "@/components/ui/social"
 
 export const Footer = () => {
     return (
@@ -23,24 +24,14 @@ export const Footer = () => {
             <span
                 className="flex gap-4 mr-3"
             >
-                <a
-                    href="https://discord.gg/ME3Hbfty"
-                    target="_blank"
-                    className="
-                        text-2xl
-                        md:text-4xl"
-                >
-                    <i className="fa-brands fa-discord"></i>
-                </a>
-                <a
-                    href="https://www.instagram.com/eindhill?igsh=MWt3cHIxZ3libDhtZQ=="
-                    target="_blank"
-                    className="
-                        text-2xl
-                        md:text-4xl"
-                >
-                    <i className="fa-brands fa-instagram"></i>
-                </a>
+                <Social
+                    link="https://discord.gg/ME3Hbfty"
+                    socialNetworkName="discord"
+                />
+                <Social
+                    link="https://www.instagram.com/eindhill?igsh=MWt3cHIxZ3libDhtZQ=="
+                    socialNetworkName="instagram"
+                />
             </span>
         </footer>
     )
