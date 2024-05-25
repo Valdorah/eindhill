@@ -13,19 +13,44 @@ import {
 const pages: { id: number, title: string; href: string; }[] = [
     {
         id: 1,
-        title: "Présentation",
-        href: "/presentation"
+        title: "accueil",
+        href: "/"
     },
     {
         id: 2,
-        title: "Les races",
-        href: "/races"
+        title: "univers",
+        href: "/univers"
     },
     {
         id: 3,
-        title: "Les classes",
-        href: "/classes"
-    }
+        title: "règles",
+        href: "/regles"
+    },
+    {
+        id: 4,
+        title: "campagne",
+        href: "/campagne"
+    },
+    {
+        id: 5,
+        title: "personnages",
+        href: "personnages"
+    },
+    {
+        id: 6,
+        title: "bestiaire",
+        href: "/bestiaire"
+    },
+    {
+        id: 7,
+        title: "cartes",
+        href: "/cartes"
+    },
+    {
+        id: 8,
+        title: "ressources",
+        href: "/ressources"
+    },
 ]
 
 export function Navigation() {
