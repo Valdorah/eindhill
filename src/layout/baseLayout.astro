@@ -4,6 +4,49 @@ import { Navigation } from "../components/ui/navigation"
 import { Footer } from '@/components/ui/footer'
 
 const { pageTitle } = Astro.props;
+
+const pages = [
+    {
+        id: 1,
+        title: "accueil",
+        href: "/"
+    },
+    {
+        id: 2,
+        title: "univers",
+        href: "/univers"
+    },
+    {
+        id: 3,
+        title: "règles",
+        href: "/regles"
+    },
+    {
+        id: 4,
+        title: "campagne",
+        href: "/campagne"
+    },
+    {
+        id: 5,
+        title: "personnages",
+        href: "personnages"
+    },
+    {
+        id: 6,
+        title: "bestiaire",
+        href: "/bestiaire"
+    },
+    {
+        id: 7,
+        title: "cartes",
+        href: "/cartes"
+    },
+    {
+        id: 8,
+        title: "ressources",
+        href: "/ressources"
+    },
+]
 ---
 
 <html class="h-full" lang="fr">
@@ -19,7 +62,7 @@ const { pageTitle } = Astro.props;
     </head>
     <body class="h-full flex flex-col">
         <header>
-            <Navigation />
+            <Navigation pages={pages} />
         </header>
 
         <article class="flex-1 container">
