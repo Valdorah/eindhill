@@ -64,18 +64,14 @@
     --input: 217.2 32.6% 17.5%;
     --ring: 212.7 26.8% 83.9%;
   }
-}
 
-@layer base {
   * {
     @apply border-border;
   }
   body {
     @apply bg-background text-foreground;
   }
-}
 
-@layer base {
   @font-face {
     font-family: 'Sen';
     font-style: normal;
@@ -101,10 +97,15 @@
   }
 
   h1 {
-    font-family: BebasNeue;
+    font-family: BebasNeue, sans-serif;
+    @apply text-primary mb-4 text-center text-4xl md:text-6xl lg:text-7xl;
   }
 
   h2, h3, h4, h5, h6 {
-    font-family: AlegreyaSansSC;
+    font-family: AlegreyaSansSC, sans-serif;
+  }
+
+  h2 {
+    @apply text-primary my-4 capitalize text-3xl md:text-5xl lg:text-6xl;
   }
 }
