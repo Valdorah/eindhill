@@ -1,7 +1,7 @@
 ---
 import BaseLayout from '@/layout/baseLayout.astro'
 
-const pageTitle: string = 'Eindhill'
+const pageTitle: string = 'bienvenue dans l\'univers d\'Eindhill !'
 ---
 
 <BaseLayout
@@ -9,17 +9,9 @@ const pageTitle: string = 'Eindhill'
 >
 	<section class="h-[32rem] flex items-center">
 		<div>
-			<h1
-				class="
-					text-primary
-					mb-4
-					text-4xl
-					text-center
-					md:text-7xl"
-			>
-				Bienvenue dans l'univers d'Eindhill !
-			</h1>
-			<p class="w-5/6 mx-auto text-center">
+			<h1>{ pageTitle }</h1>
+
+			<p class="text-center">
 				Eindhill est un univers d'héroïc fantasy où la Lumière et le Chaos
 				se livrent une bataille sans fin. Ce monde, façonné par des forces
 				divines et anciennes, se situe au cœur de l'Éternité, le tissu même
@@ -27,7 +19,7 @@ const pageTitle: string = 'Eindhill'
 				sont tissées de récits de bravoure et de mystères.
 			</p>
 
-			<p class="w-5/6 mx-auto mt-3 text-center">
+			<p class="mt-3 text-center">
 				Rejoignez notre <a
 				class="underline decoration-2"
 				href="https://discord.gg/ME3Hbfty"

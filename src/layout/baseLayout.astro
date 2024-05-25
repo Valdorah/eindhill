@@ -15,15 +15,19 @@ const { pageTitle } = Astro.props;
         <link href="/assets/fontawesome/css/solid.min.css" rel="stylesheet" />
         <meta name="viewport" content="width=device-width" />
         <meta name="generator" content={Astro.generator} />
-        <title>{pageTitle}</title>
+        <title>Eindhill - {pageTitle}</title>
     </head>
     <body class="h-full flex flex-col">
-        <Navigation />
+        <header>
+            <Navigation />
+        </header>
 
-        <div class="flex-1">
+        <article class="flex-1 container">
             <slot />
-        </div>
+        </article>
 
-        <Footer />
+        <footer>
+            <Footer />
+        </footer>
     </body>
 </html>
