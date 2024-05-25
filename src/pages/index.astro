@@ -1,33 +1,39 @@
 ---
-import '@/styles/globals.css'
+import BaseLayout from '@/layout/baseLayout.astro'
+
+const pageTitle: string = 'Eindhill'
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1 class="text-primary mb-3 text-7xl text-center">
-			Bienvenue dans l'univers d'Eindhill !
-		</h1>
-		<p class="w-5/6 mx-auto text-center">
-			Eindhill est un univers d'héroïc fantasy où la Lumière et le Chaos
-			se livrent une bataille sans fin. Ce monde, façonné par des forces
-			divines et anciennes, se situe au cœur de l'Éternité, le tissu même
-			du cosmos et de la Création. L'histoire et les légendes de ce monde
-			sont tissées de récits de bravoure et de mystères.
-		</p>
+<BaseLayout
+	pageTitle={pageTitle}
+>
+	<section class="h-[32rem] flex items-center">
+		<div>
+			<h1
+				class="
+					text-primary
+					mb-4
+					text-4xl
+					text-center
+					md:text-7xl"
+			>
+				Bienvenue dans l'univers d'Eindhill !
+			</h1>
+			<p class="w-5/6 mx-auto text-center">
+				Eindhill est un univers d'héroïc fantasy où la Lumière et le Chaos
+				se livrent une bataille sans fin. Ce monde, façonné par des forces
+				divines et anciennes, se situe au cœur de l'Éternité, le tissu même
+				du cosmos et de la Création. L'histoire et les légendes de ce monde
+				sont tissées de récits de bravoure et de mystères.
+			</p>
 
-		<p class="w-5/6 mx-auto mt-3 text-center">
-			Rejoignez notre <a
+			<p class="w-5/6 mx-auto mt-3 text-center">
+				Rejoignez notre <a
 				class="underline decoration-2"
 				href="https://discord.gg/ME3Hbfty"
 				target="_blank">Discord</a
-			> pour en savoir plus !
-		</p>
-	</body>
-</html>
+				> pour en savoir plus !
+			</p>
+		</div>
+	</section>
+</BaseLayout>

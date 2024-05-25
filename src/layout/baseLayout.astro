@@ -1,0 +1,29 @@
+---
+import '@/styles/globals.css'
+import { Navigation } from "../components/ui/navigation"
+import { Footer } from '@/components/ui/footer'
+
+const { pageTitle } = Astro.props;
+---
+
+<html class="h-full" lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link href="/assets/fontawesome/css/fontawesome.min.css" rel="stylesheet" />
+        <link href="/assets/fontawesome/css/brands.min.css" rel="stylesheet" />
+        <link href="/assets/fontawesome/css/solid.min.css" rel="stylesheet" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{pageTitle}</title>
+    </head>
+    <body class="h-full flex flex-col">
+        <Navigation />
+
+        <div class="flex-1">
+            <slot />
+        </div>
+
+        <Footer />
+    </body>
+</html>
