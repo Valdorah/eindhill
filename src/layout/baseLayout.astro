@@ -30,12 +30,12 @@ const pages = [
         <meta name="generator" content={Astro.generator} />
         <title>Eindhill - {pageTitle}</title>
     </head>
-    <body class="h-full flex flex-col">
+    <body class="h-full flex flex-col bg-accent">
         <header>
             <Navigation pages={pages} />
         </header>
 
-        <article class="flex-1">
+        <article class="flex-1 text-white">
             <slot />
         </article>
 
