@@ -108,4 +108,12 @@
   h2 {
     @apply text-primary my-4 capitalize text-3xl md:text-5xl lg:text-6xl;
   }
+
+  .main-page {
+    @apply relative after:content-[''] after:absolute after:left-0 after:top-0 after:h-full after:w-full after:bg-[url('/public/images/eindhill_logo.png')] after:bg-no-repeat after:bg-cover after:opacity-30;
+  }
+
+  .main-page::after {
+    background-position: calc(100% + 350px);
+  }
 }
