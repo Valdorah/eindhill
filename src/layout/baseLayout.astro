@@ -15,37 +15,7 @@ const pages = [
         id: 2,
         title: "univers",
         href: "/univers"
-    },
-    {
-        id: 3,
-        title: "règles",
-        href: "/regles"
-    },
-    {
-        id: 4,
-        title: "campagne",
-        href: "/campagne"
-    },
-    {
-        id: 5,
-        title: "personnages",
-        href: "personnages"
-    },
-    {
-        id: 6,
-        title: "bestiaire",
-        href: "/bestiaire"
-    },
-    {
-        id: 7,
-        title: "cartes",
-        href: "/cartes"
-    },
-    {
-        id: 8,
-        title: "ressources",
-        href: "/ressources"
-    },
+    }
 ]
 ---
 
@@ -56,7 +26,7 @@ const pages = [
         <link href="/assets/fontawesome/css/fontawesome.min.css" rel="stylesheet" />
         <link href="/assets/fontawesome/css/brands.min.css" rel="stylesheet" />
         <link href="/assets/fontawesome/css/solid.min.css" rel="stylesheet" />
-        <meta name="viewport" content="width=device-width" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="generator" content={Astro.generator} />
         <title>Eindhill - {pageTitle}</title>
     </head>
@@ -65,7 +35,7 @@ const pages = [
             <Navigation pages={pages} />
         </header>
 
-        <article class="flex-1 container">
+        <article class="flex-1">
             <slot />
         </article>
 
