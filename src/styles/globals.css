@@ -114,6 +114,6 @@
   }
 
   .main-page::after {
-    background-position: calc(100% + 350px);
+    background-position: calc(100% + 250px);
   }
 }
