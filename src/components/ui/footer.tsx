@@ -7,7 +7,6 @@ export const Footer = () => {
     return (
         <footer
             className="
-                mt-4
                 bg-secondary
                 text-white
                 p-4
