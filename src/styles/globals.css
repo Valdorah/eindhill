@@ -110,6 +110,14 @@
     @apply text-primary my-4 capitalize text-3xl md:text-5xl lg:text-6xl;
   }
 
+  h3 {
+    @apply text-white my-4 capitalize text-xl md:text-3xl lg:text-4xl;
+  }
+
+  h4 {
+    @apply text-white my-3 capitalize text-xl md:text-2xl lg:text-3xl;
+  }
+
   .main-page {
     @apply relative after:content-[''] after:absolute after:left-0 after:top-0 after:h-full after:w-full after:bg-[url('/public/images/eindhill_logo.png')] after:bg-no-repeat after:bg-cover after:opacity-30;
   }
