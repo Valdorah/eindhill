@@ -1,6 +1,9 @@
 ---
 import BaseLayout from '@/layout/baseLayout.astro'
+import { LinkCard } from "../components/ui/link-card"
+import { SimpleCard } from "../components/ui/simple-table";
 import Skill from "@/models/Skill"
+import Card from "@/models/Card"
 
 const pageTitle: string = 'Création du Héros'
 
@@ -86,6 +89,35 @@ const skills: Skill[] = [
         description: "Compétence liée à la navigation."
     }
 ]
+
+const steps: Card[] = [
+    {
+        image: "/public/images/les-races.jpg",
+        title: "Les races",
+        content: "La race fait référence à l'origine biologique ou ethnique de votre personnage dans le jeu. Les" +
+            " races dans un jeu de rôle fantastique peuvent inclure des humains, des elfes, des nains, des hybrides.",
+        textLink: "Etape 2",
+        url: "/univers"
+    },
+    {
+        image: "/public/images/les-classes.jpg",
+        title: "Les classes",
+        content: "La classe représente le rôle principal ou la spécialisation de votre personnage dans le jeu. Les" +
+        " classes déterminent souvent les compétences, les capacités et les styles de jeu disponibles pour votre" +
+        " personnage.",
+        textLink: "Etape 3",
+        url: "/univers",
+    },
+    {
+        image: "/public/images/systeme.jpg",
+        title: "Système",
+        content: "Le système fait référence aux règles et mécanismes spécifiques utilisés dans le jeu de rôle." +
+        " Il définit comment les personnages sont créés, comment les actions sont résolues et comment l'histoire" +
+        " progresse. ",
+        textLink: "Etape 4",
+        url: "/univers"
+    }
+];
 ---
 
 <BaseLayout
@@ -450,6 +482,21 @@ const skills: Skill[] = [
 
         <div>
             <h3>Prochaines étapes !</h3>
+            <div
+                class="grid gap-4 grid-cols-3"
+            >
+                {
+                    steps.map(card => (
+                        <LinkCard
+                            image={card.image}
+                            title={card.title}
+                            content={card.content}
+                            textLink={card.textLink}
+                            url={card.url}
+                        />
+                    ))
+                }
+            </div>
         </div>
     </section>
 </BaseLayout>
