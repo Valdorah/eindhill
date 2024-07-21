@@ -3,7 +3,7 @@
 import * as React from "react"
 
 import {
-    Table,
+    Table as ShadTable,
     TableBody,
     TableCaption,
     TableCell,
@@ -11,27 +11,44 @@ import {
     TableHeader,
     TableRow,
 } from "@/components/ui/table";
+import type Table from "@/models/Table.ts";
+import {cn} from "@/lib/utils.ts";
 
-export function SimpleCard() {
+export function SimpleTable(props: Table) {
+    const { caption, columns, values } = props
     return (
-        <Table>
-            <TableCaption>A list of your recent invoices.</TableCaption>
-            <TableHeader>
+        <ShadTable className='border'>
+            {caption ? (<TableCaption>{caption}</TableCaption>) : ''}
+            <TableHeader className='bg-primary'>
                 <TableRow>
-                    <TableHead className="w-[100px]">Invoice</TableHead>
-                    <TableHead>Status</TableHead>
-                    <TableHead>Method</TableHead>
-                    <TableHead className="text-right">Amount</TableHead>
+                    {
+                        columns.map(column => (
+                            <TableHead
+                                className={cn('text-secondary', column.className)}
+                            >
+                                {column.value}
+                            </TableHead>
+                        ))
+                    }
                 </TableRow>
             </TableHeader>
-            <TableBody>
-                <TableRow>
-                    <TableCell className="font-medium">INV001</TableCell>
-                    <TableCell>Paid</TableCell>
-                    <TableCell>Credit Card</TableCell>
-                    <TableCell className="text-right">$250.00</TableCell>
-                </TableRow>
+            <TableBody className='bg-secondary'>
+                {
+                    values.map((value : any) => (
+                        <TableRow>
+                            {
+                                columns.map(column => (
+                                    <TableCell
+                                        className={column.className}
+                                    >
+                                        {value[column.key]}
+                                    </TableCell>
+                                ))
+                            }
+                        </TableRow>
+                    ))
+                }
             </TableBody>
-        </Table>
+        </ShadTable>
     )
 }

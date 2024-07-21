@@ -21,7 +21,7 @@ export function LinkCard(card: Card) {
                 {
                     card.image ? (<img src={card.image} />) : ''
                 }
-                <CardTitle>{ card.title }</CardTitle>
+                <CardTitle className="text-primary">{ card.title }</CardTitle>
             </CardHeader>
             <CardContent>
                 <p>{ card.content }</p>

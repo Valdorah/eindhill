@@ -1,11 +1,48 @@
 ---
 import BaseLayout from '@/layout/baseLayout.astro'
 import { LinkCard } from "../components/ui/link-card"
-import { SimpleCard } from "../components/ui/simple-table";
+import { SimpleTable } from "../components/ui/simple-table";
+import { SimpleCard } from "../components/ui/simple-card";
 import Skill from "@/models/Skill"
 import Card from "@/models/Card"
+import Caracteristic from "@/models/Caracteristic";
 
 const pageTitle: string = 'Création du Héros'
+
+const caracteristics: Caracteristic[] = [
+    {
+        name: 'Consitution',
+        description: 'La constitution reflète la robustesse physique et la santé globale d\'un personnage. Elle influe' +
+            ' sur sa résistance aux maladies, aux poisons et sa capacité à encaisser des dégâts au combat.'
+    },
+    {
+        name: 'Charisme',
+        description: 'Cette caractéristique mesure le pouvoir d\'influence sociale et la capacité à interagir' +
+            ' positivement avec les autres personnages du jeu. Un personnage charismatique peut être persuasif' +
+            ' ou même intimidant.'
+    },
+    {
+        name: 'Sagesse',
+        description: 'La sagesse représente la perception, l\'intuition et la compréhension du monde qui entoure le' +
+            ' personnage. Elle peut influencer sa capacité à percevoir des détails subtils.'
+    },
+    {
+        name: 'Dextérité',
+        description: 'La dextérité mesure l\'agilité et la coordination motrice d\'un personnage. Elle influe sur sa' +
+            ' précision au combat, sa capacité à esquiver des actions nécessitant une certaine habileté.'
+    },
+    {
+        name: 'Intelligence',
+        description: 'Cette caractéristique reflète la sagacité mentale d\'un personnage, affectant sa capacité à' +
+            ' résoudre des énigmes, à comprendre des informations complexes et à utiliser des compétences' +
+            ' intellectuelles.'
+    },
+    {
+        name: 'Force',
+        description: 'Représentant la puissance physique d\'un personnage, la force influence sa capacité à soulever' +
+            ' des objets lourds, à infliger des dégâts au combat et à résister à des épreuves physiques.'
+    }
+]
 
 const skills: Skill[] = [
     {
@@ -97,7 +134,7 @@ const steps: Card[] = [
         content: "La race fait référence à l'origine biologique ou ethnique de votre personnage dans le jeu. Les" +
             " races dans un jeu de rôle fantastique peuvent inclure des humains, des elfes, des nains, des hybrides.",
         textLink: "Etape 2",
-        url: "/univers"
+        url: null
     },
     {
         image: "/public/images/les-classes.jpg",
@@ -106,7 +143,7 @@ const steps: Card[] = [
         " classes déterminent souvent les compétences, les capacités et les styles de jeu disponibles pour votre" +
         " personnage.",
         textLink: "Etape 3",
-        url: "/univers",
+        url: null,
     },
     {
         image: "/public/images/systeme.jpg",
@@ -115,16 +152,16 @@ const steps: Card[] = [
         " Il définit comment les personnages sont créés, comment les actions sont résolues et comment l'histoire" +
         " progresse. ",
         textLink: "Etape 4",
-        url: "/univers"
+        url: null
     }
-];
+]
 ---
 
 <BaseLayout
         pageTitle={pageTitle}
 >
     <section class="container mb-6">
-        <header class="mb-6">
+        <header class="mb-12">
             <h2>{ pageTitle }</h2>
 
             <h3 class="text-center">Première partie</h3>
@@ -139,7 +176,7 @@ const steps: Card[] = [
             </figure>
         </header>
 
-        <div>
+        <div class="mb-12">
             <p>
                 Un système de jet, dans le contexte d'un jeu de rôle, est une mécanique utilisée pour déterminer le
                 résultat d'une action entreprise par un joueur ou un personnage non joueur (PNJ) dans le cadre du jeu.
@@ -155,7 +192,7 @@ const steps: Card[] = [
             </p>
         </div>
 
-        <div>
+        <div class="mb-12">
             <h4>Avant de commencer</h4>
 
             <p>
@@ -188,7 +225,7 @@ const steps: Card[] = [
             </ul>
         </div>
 
-        <div>
+        <div class="mb-12">
             <h4>Les Caractéristiques</h4>
 
             <p>
@@ -199,56 +236,16 @@ const steps: Card[] = [
                 la capacité à résoudre des énigmes. Voici une description des Carac. :
             </p>
 
-            <div>
-                <div>
-                    <p>Constitution</p>
-                    <p>
-                        La constitution reflète la robustesse physique et la santé globale d'un personnage. Elle influe
-                        sur sa résistance aux maladies, aux poisons et sa capacité à encaisser des dégâts au combat.
-                    </p>
-                </div>
-
-                <div>
-                    <p>Charisme</p>
-                    <p>
-                        Cette caractéristique mesure le pouvoir d'influence sociale et la capacité à interagir
-                        positivement avec les autres personnages du jeu. Un personnage charismatique peut être persuasif
-                        ou même intimidant.
-                    </p>
-                </div>
-                <div>
-                    <p>Sagesse</p>
-                    <p>
-                        La sagesse représente la perception, l'intuition et la compréhension du monde qui entoure le
-                        personnage. Elle peut influencer sa capacité à percevoir des détails subtils.
-                    </p>
-                </div>
-                <div>
-                    <p>Dextérité</p>
-                    <p>
-                        La dextérité mesure l'agilité et la coordination motrice d'un personnage. Elle influe sur sa
-                        précision au combat, sa capacité à esquiver des actions nécessitant une certaine habileté.
-                    </p>
-                </div>
-                <div>
-                    <p>Intelligence</p>
-                    <p>
-                        Cette caractéristique reflète la sagacité mentale d'un personnage, affectant sa capacité à
-                        résoudre des énigmes, à comprendre des informations complexes et à utiliser des compétences
-                        intellectuelles.
-                    </p>
-                </div>
-                <div>
-                    <p>Force</p>
-                    <p>
-                        Représentant la puissance physique d'un personnage, la force influence sa capacité à soulever
-                        des objets lourds, à infliger des dégâts au combat et à résister à des épreuves physiques.
-                    </p>
-                </div>
+            <div class="grid lg:grid-cols-2 gap-4 mt-6">
+                {
+                    caracteristics.map(caracteristic => (
+                            <SimpleCard title={caracteristic.name} content={caracteristic.description} />
+                    ))
+                }
             </div>
         </div>
 
-        <div>
+        <div class="mb-12">
             <h4>Valeurs et Modificateurs</h4>
             <p>
                 Les Valeurs et les Modificateurs (Mod.) des Caractéristiques définissent numériquement les capacités et
@@ -267,56 +264,26 @@ const steps: Card[] = [
                 <strong class="text-primary">Au départ, toutes les caractéristiques possèdent une valeur de 10.</strong>
             </p>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Valeurs</th>
-                        <th>Modificateurs</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>1 à 3</td>
-                        <td>-4</td>
-                    </tr>
-                    <tr>
-                        <td>4 à 5</td>
-                        <td>-3</td>
-                    </tr>
-                    <tr>
-                        <td>6 à 7</td>
-                        <td>-2</td>
-                    </tr>
-                    <tr>
-                        <td>8 à 9</td>
-                        <td>-1</td>
-                    </tr>
-                    <tr>
-                        <td>10 à 11</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>12 à 13</td>
-                        <td>+1</td>
-                    </tr>
-                    <tr>
-                        <td>14 à 15</td>
-                        <td>+2</td>
-                    </tr>
-                    <tr>
-                        <td>16 à 17</td>
-                        <td>+3</td>
-                    </tr>
-                    <tr>
-                        <td>18 à 19</td>
-                        <td>+4</td>
-                    </tr>
-                    <tr>
-                        <td>20 à 21</td>
-                        <td>+5</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="lg:w-1/2 m-auto my-6">
+                <SimpleTable
+                        columns={[
+                            { key: 'val', value: 'Valeurs' },
+                            { key: 'mod', value: 'Modificateurs' }
+                        ]}
+                        values={[
+                            { val: '1 à 3', mod: '-4' },
+                            { val: '4 à 5', mod: '-3' },
+                            { val: '6 à 7', mod: '-2' },
+                            { val: '8 à 9', mod: '-1' },
+                            { val: '10 à 11', mod: '0' },
+                            { val: '12 à 13', mod: '+1' },
+                            { val: '14 à 15', mod: '+2' },
+                            { val: '16 à 17', mod: '+3' },
+                            { val: '18 à 19', mod: '+4' },
+                            { val: '20 à 21', mod: '+5' }
+                        ]}
+                />
+            </div>
 
             <p>
                 Le Modificateur, quant à lui, est dérivé de la Valeur de la Caractéristique. Il représente l'ajustement
@@ -333,7 +300,7 @@ const steps: Card[] = [
             </p>
         </div>
 
-        <div>
+        <div class="mb-12">
             <h4>Méthode de répartition</h4>
             <p>
                 Les joueurs commencent par répartir un total de 15 points entre les valeurs des six caractéristiques,
@@ -350,96 +317,48 @@ const steps: Card[] = [
                 équité entre les membres du groupe dès le début de l'aventure.
             </p>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Caractéristiques</th>
-                        <th>Valeurs</th>
-                        <th>Modificateurs</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Force</td>
-                        <td>10</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>Dextérité</td>
-                        <td>10</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>Constitution</td>
-                        <td>10</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>Intelligence</td>
-                        <td>10</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>Sagesse</td>
-                        <td>10</td>
-                        <td>0</td>
-                    </tr>
-                    <tr>
-                        <td>Charisme</td>
-                        <td>10</td>
-                        <td>0</td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="lg:w-1/2 m-auto my-6">
+                <SimpleTable
+                        columns={[
+                            { key: 'car', value: 'Caractéristiques' },
+                            { key: 'val', value: 'Valeurs' },
+                            { key: 'mod', value: 'Modificateurs' }
+                        ]}
+                        values={[
+                            { car: 'Force', val: '10', mod: '0' },
+                            { car: 'Dextérité', val: '10', mod: '0' },
+                            { car: 'Constitution', val: '10', mod: '0' },
+                            { car: 'Intelligence', val: '10', mod: '0' },
+                            { car: 'Sagesse', val: '10', mod: '0' },
+                            { car: 'Charisme', val: '10', mod: '0' }
+                        ]}
+                />
+            </div>
 
             <p>
                 <strong class="text-primary">Attention, vous ne pouvez avoir que trois VALEURS paires et impaires !</strong>
             </p>
 
-            <table>
-                <thead>
-                <tr>
-                    <th>Caractéristiques</th>
-                    <th>Valeurs</th>
-                    <th>Modificateurs</th>
-                </tr>
-                </thead>
-                <tbody>
-                <tr>
-                    <td>Force</td>
-                    <td>13</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>Dextérité</td>
-                    <td>14</td>
-                    <td>2</td>
-                </tr>
-                <tr>
-                    <td>Constitution</td>
-                    <td>13</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>Intelligence</td>
-                    <td>12</td>
-                    <td>1</td>
-                </tr>
-                <tr>
-                    <td>Sagesse</td>
-                    <td>11</td>
-                    <td>0</td>
-                </tr>
-                <tr>
-                    <td>Charisme</td>
-                    <td>12</td>
-                    <td>1</td>
-                </tr>
-                </tbody>
-            </table>
+            <div class="lg:w-1/2 m-auto my-6">
+                <SimpleTable
+                    columns={[
+                        { key: 'car', value: 'Caractéristiques' },
+                        { key: 'val', value: 'Valeurs' },
+                        { key: 'mod', value: 'Modificateurs' }
+                    ]}
+                    values={[
+                        { car: 'Force', val: '13', mod: '1' },
+                        { car: 'Dextérité', val: '14', mod: '2' },
+                        { car: 'Constitution', val: '13', mod: '1' },
+                        { car: 'Intelligence', val: '12', mod: '1' },
+                        { car: 'Sagesse', val: '11', mod: '0' },
+                        { car: 'Charisme', val: '12', mod: '1' }
+                    ]}
+                />
+            </div>
         </div>
 
-        <div>
+        <div class="mb-12">
             <h4>Compétences et Bonus de Compétences</h4>
             <p>
                 Dans un jeu de rôle, la compétence et le bonus de compétence sont des mécanismes qui déterminent le
@@ -458,19 +377,16 @@ const steps: Card[] = [
                 des mouvements agiles et acrobatiques.
             </p>
 
-            <div>
+            <div class="grid grid-cols-2 gap-4 mt-6">
                 {
                     skills.map(skill => (
-                        <div>
-                            <p>{skill.name}</p>
-                            <p>{skill.description}</p>
-                        </div>
+                        <SimpleCard title={skill.name} content={skill.description} />
                     ))
                 }
             </div>
         </div>
 
-        <div>
+        <div class="mb-12">
             <h4>Bonus de Compétences</h4>
 
             <p>
@@ -480,7 +396,7 @@ const steps: Card[] = [
             </p>
         </div>
 
-        <div>
+        <div class="mb-12">
             <h3>Prochaines étapes !</h3>
             <div
                 class="grid gap-4 grid-cols-3"
