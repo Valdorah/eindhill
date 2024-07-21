@@ -15,30 +15,35 @@ import {Button} from "@/components/ui/button.tsx";
 export function LinkCard(card: Card) {
     return (
         <ShadCard
-            className='flex flex-col justify-between'
+            className={`bg-center bg-cover lg:!bg-none`}
+            style={{ backgroundImage: card.image ? `url(${card.image})` : '' }}
         >
-            <CardHeader>
-                {
-                    card.image ? (<img src={card.image} />) : ''
-                }
-                <CardTitle className="text-primary">{ card.title }</CardTitle>
-            </CardHeader>
-            <CardContent>
-                <p>{ card.content }</p>
-            </CardContent>
-            <CardFooter
-                className='justify-end'
-            >
-                <a
-                    href={card.url}
+            <div className='h-full flex flex-col justify-between bg-secondary/75 lg:bg-transparent rounded-lg'>
+                <CardHeader>
+                    <div className='hidden lg:block'>
+                        {
+                            card.image ? (<img className='w-full' src={card.image} />) : ''
+                        }
+                    </div>
+                    <CardTitle className="text-primary">{ card.title }</CardTitle>
+                </CardHeader>
+                <CardContent>
+                    <p>{ card.content }</p>
+                </CardContent>
+                <CardFooter
+                    className='justify-end'
                 >
-                    <Button
-                        className='text-secondary'
+                    <a
+                        href={card.url}
                     >
-                        { card.textLink ?? 'Consulter' }
-                    </Button>
-                </a>
-            </CardFooter>
+                        <Button
+                            className='text-secondary'
+                        >
+                            { card.textLink ?? 'Consulter' }
+                        </Button>
+                    </a>
+                </CardFooter>
+            </div>
         </ShadCard>
     )
 }

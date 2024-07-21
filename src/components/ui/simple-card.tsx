@@ -13,7 +13,8 @@ import type Card from "@/models/Card.ts";
 export function SimpleCard(card: Card) {
     return (
         <ShadCard
-            className={`bg-center bg-cover bg-[url(${card.image})] sm:bg-none`}
+            className={`bg-center bg-cover sm:!bg-none`}
+            style={{ backgroundImage: card.image ? `url(${card.image})` : '' }}
         >
             <div className='flex'>
                 <div className='hidden sm:flex flex-col justify-center'>
