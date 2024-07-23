@@ -1,0 +1,76 @@
+---
+import BaseLayout from '@/layout/baseLayout.astro'
+import {SimpleCard} from "../../components/ui/simple-card";
+import Card from "@/models/Card"
+
+const pageTitle: string = 'Création du héros'
+
+const prototypes: Card[] = [
+    {
+        title: 'Les races mortelles',
+        content: 'Les races mortelles comprennent les êtres vivants ordinaires ou mortels qui peuplent le monde. Elles' +
+            ' sont souvent sujettes à la mort et à la mortalité, contrairement à certaines races immortelles ou divines.',
+        image: '/public/images/races-mortelles.png',
+        url: null
+    },
+    {
+        title: 'Les Races Anciennes',
+        content: 'Les races anciennes font référence à des groupes de créatures qui existent depuis longtemps dans le' +
+            ' monde. Elles ont souvent une histoire riche et ancienne, remontant à des époques reculées de l\'univers.',
+        image: '/public/images/races-anciennes.jpg',
+        url: null
+    },
+    {
+        title: 'Les Races Hybrides',
+        content: 'Les races hybrides peuvent ajouter de la diversité et de l\'intérêt à un monde fantastique en' +
+            ' combinant différentes cultures, perspectives et pouvoirs magiques. ',
+        image: '/public/images/races-hybrides.webp',
+        url: null
+    }
+];
+---
+
+<BaseLayout
+        pageTitle={pageTitle}
+>
+    <section class="container mb-6">
+        <header class="mb-12">
+            <h2>{ pageTitle }</h2>
+
+            <h3 class="text-center">Les races</h3>
+
+            <p>
+                Chaque race offre une palette unique de caractéristiques, avec des sous-races distinctes ajoutant une
+                profondeur encore plus grande. Plongez dans les nuances des cultures, des traditions et des récits qui
+                définissent chaque groupe, contribuant à une toile complexe et captivante dans l'univers d'Eindhill.
+            </p>
+            <p>
+                <strong>Les Races offrent une compétence.</strong>
+            </p>
+            <p>
+                <strong>Les compétences raciales</strong>, qui permettent de différencier les personnages en fonction de leur nature
+                profonde et de leur appartenance à une race afin de simuler la grande variété des modes de vie.
+            </p>
+        </header>
+
+        <div class="mb-12">
+            <div class="grid gap-4 grid-cols-1 lg:grid-cols-3">
+                {
+                    prototypes.map(prototype => (
+                        <SimpleCard
+                            title={prototype.title}
+                            content={prototype.content}
+                            image={prototype.image}
+                        />
+                    ))
+                }
+            </div>
+        </div>
+
+        <div class="mb-12">
+            <h4>Races Mortelles</h4>
+
+
+        </div>
+    </section>
+</BaseLayout>

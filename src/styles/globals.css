@@ -88,6 +88,10 @@
     @apply text-white my-3 capitalize text-xl md:text-2xl lg:text-3xl;
   }
 
+  strong {
+    @apply text-primary;
+  }
+
   .main-page {
     @apply relative after:content-[''] after:absolute after:left-0 after:top-0 after:h-full after:w-full after:bg-[url('/public/images/eindhill_logo.png')] after:bg-no-repeat after:bg-cover after:opacity-30;
   }
