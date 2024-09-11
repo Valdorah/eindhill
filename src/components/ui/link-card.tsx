@@ -30,19 +30,23 @@ export function LinkCard(card: Card) {
                 <CardContent>
                     <p>{ card.content }</p>
                 </CardContent>
-                <CardFooter
-                    className='justify-end'
-                >
-                    <a
-                        href={card.url}
-                    >
-                        <Button
-                            className='text-secondary'
+                {
+                    card.url ? (
+                        <CardFooter
+                            className='justify-end'
                         >
-                            { card.textLink ?? 'Consulter' }
-                        </Button>
-                    </a>
-                </CardFooter>
+                            <a
+                                href={card.url}
+                            >
+                                <Button
+                                    className='text-secondary'
+                                >
+                                    { card.textLink ?? 'Consulter' }
+                                </Button>
+                            </a>
+                        </CardFooter>
+                    ) : ''
+                }
             </div>
         </ShadCard>
     )
