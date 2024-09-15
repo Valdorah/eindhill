@@ -15,11 +15,13 @@ import type Table from "@/models/Table.ts";
 import {cn} from "@/lib/utils.ts";
 
 export function SimpleTable(props: Table) {
+    if(!props) return '';
+    
     const { caption, columns, values } = props
     return (
         <ShadTable className='border'>
             {caption ? (<TableCaption>{caption}</TableCaption>) : ''}
-            <TableHeader className='bg-primary'>
+            {/* <TableHeader className='bg-primary'>
                 <TableRow>
                     {
                         columns.map(column => (
@@ -31,16 +33,14 @@ export function SimpleTable(props: Table) {
                         ))
                     }
                 </TableRow>
-            </TableHeader>
+            </TableHeader> */}
             <TableBody className='bg-secondary'>
                 {
-                    values.map((value : any) => (
-                        <TableRow>
+                    values.map((value, index) => (
+                        <TableRow key={index}>
                             {
-                                columns.map(column => (
-                                    <TableCell
-                                        className={column.className}
-                                    >
+                                columns.map((column, j) => (
+                                    <TableCell className={column.className}>
                                         {value[column.key]}
                                     </TableCell>
                                 ))

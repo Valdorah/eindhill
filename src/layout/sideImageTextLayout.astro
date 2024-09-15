@@ -1,0 +1,15 @@
+---
+const { image, title, reverse } = Astro.props;
+---
+
+<div>
+    <h3 class="text-center">{title}</h3>
+    <div class:list={['lg:flex gap-4', reverse && 'flex-row-reverse']}>
+        <div class="my-4 lg:flex-1">
+            <img class="m-auto rounded-lg" src={image} alt={'race-' + title} />
+        </div>
+        <div class="flex-1 text-justify">
+            <slot />
+        </div>
+    </div>
+</div>
