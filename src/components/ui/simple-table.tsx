@@ -21,7 +21,7 @@ export function SimpleTable(props: Table) {
     return (
         <ShadTable className='border'>
             {caption ? (<TableCaption>{caption}</TableCaption>) : ''}
-            {/* <TableHeader className='bg-primary'>
+            <TableHeader className='bg-primary'>
                 <TableRow>
                     {
                         columns.map(column => (
@@ -33,7 +33,7 @@ export function SimpleTable(props: Table) {
                         ))
                     }
                 </TableRow>
-            </TableHeader> */}
+            </TableHeader>
             <TableBody className='bg-secondary'>
                 {
                     values.map((value, index) => (

@@ -8,6 +8,34 @@ import Armor from '@/enums/Armor';
 
 const pageTitle: string = 'Création du héros'
 
+const formatInfoRace = (race: Race, key: number) => {
+    return `<SideImageTextLayout image={race.image} title={race.name} reverse={key % 2 !== 0}>
+    <p>{race.description}</p>
+
+    <h3>Compétence raciale</h3>
+    <ul>
+    {
+        race.racialSkills.map(skill => <li>{skill.description}</li>)
+    }
+    </ul>
+
+    <h3>Maîtrise d'armure</h3>
+    <ul>
+    {
+        race.armorType.map(type => <li class="capitalize">{type}</li>)
+    }
+    </ul>
+
+    {
+        race.additionalInfo &&
+        <div>
+            <h3>Notes supplémentaires</h3>
+    <Fragment set:html={race.additionalInfo} />
+    </div>
+    }
+    </SideImageTextLayout>`
+}
+
 const prototypes: Card[] = [
     {
         title: 'Les races mortelles',
@@ -106,6 +134,185 @@ const mortalRaces: Race[] = [
         `
     }
 ];
+
+const elderRaces: Race[] = [
+    {
+        name: 'Ein',
+        description: 'Les Eins, habitants des îles scindées de Pantropeira, sont les premiers êtres à avoir peuplé Eindhill ' +
+            'autrefois. Leur essence noble et éthérée équivaut à l\'élégance des elfes dans d\'autres récits fantastiques, ' +
+            'mais ici, ils portent le nom distinctif de "Eins".',
+        image: '/images/races/race-ein.jpg',
+        racialSkills: [
+            {
+                name: 'Lumière du Fondateur',
+                description: 'Un Ein est insensible aux dégâts de Lumière, il possède un bonus de +2 via sa Caste, ' +
+                    'représentant ses connaissances. Cependant, les dégâts de type Chaos sont doublés ! Son total de mana ' +
+                    'augmente de +3',
+                image: null
+            }
+        ],
+        armorType: [Armor.LIGHT, Armor.INTERMEDIATE, Armor.HEAVY],
+        additionalInfo: `
+            <p>
+                Les Eins sont divisées en plusieurs castes,  chacune  étant associée à un astre particulier ou alors une
+                divinité tutélaire.
+            </p>
+            
+            <h4>Imperien</h4>
+            <p>
+                Les Imperiens sont une caste affiliée à un groupe ou une famille qui ne suit ni Valanor ni Ithil, les
+                deux astres principaux de l'univers. Ils sont donc indépendants de l'influence des astres et peuvent
+                représenter une faction neutre. 
+            </p>
+            <p>Bonus accordé : Offre un bonus de +2 en Histoire et Représentation.</p>
+            
+            <h4>Solaréen</h4>
+            <p>
+                Les Solaréens sont des Hauts-Eins affiliés au peuple du Soleil, représenté par Valanor. Ils sont fidèles
+                à cet astre et peuvent être culturellement, politiquement ou religieusement liés à lui. Leur identité et
+                leurs valeurs peuvent être fortement influencées par cette affiliation solaire.
+            </p>
+            <p>Bonus accordé : Offre un bonus de +2 en Athlétisme et Intimidation.</p>
+            
+            <h4>Lunaréen</h4>
+            <p>
+                Les Lunaréens, quant à eux, sont associés à l'astre de la nuit, représenté par Ithil. Ils sont en accord
+                avec les valeurs, les croyances ou les pratiques liées à cet astre. 
+            </p>
+            <p>Bonus accordé  : Offre un bonus de +2 en Médecine et Discrétion, ne porte pas d’armures lourdes.</p>
+            
+            <h4>Miragardien</h4>
+            <p>
+                Les Miragradiens sont les habitants éminents d'Elvinor, imprégnés de la magie d'Enarielle qui coule à
+                travers leurs veines. En tant que maîtres de la magie, leur connexion profonde avec les arcanes les place
+                au sommet.
+            </p>
+            <p>Bonus accordé  : Offre un bonus de +2 en Arcane et Perception Magique , ne porte pas d’armures lourdes.</p>
+            
+            <h4>Phynomien</h4>
+            <p>
+                Les Phynomiens habitent les bosquets d'Eindhill, établissant un lien étroit avec Avalon et la nature qui
+                les entoure. Gardiens des forêts, ils sont dotés d'une communion profonde avec les créatures et les
+                esprits de la forêt.
+            </p>
+            <p>Bonus accordé  : Offre un bonus de +2 Nature et Dressage, ne porte pas d’armures lourdes.</p>
+            
+            <h4>Eyrellien</h4>
+            <p>
+                Les Eyrelliens incarnent la justice et l'honneur au nom d'Encarnacion en tant que Chevaliers de Lumière
+                du Sanctuaire. Représentant la vertu, leur engagement envers la lumière guide leurs actions. 
+            </p>
+            <p>Bonus accordé  : Offre un bonus de +2 en Religion et Histoire</p>
+            
+            <h4>Océanien</h4>
+            <p>
+                Les Océaniens résident dans le Cœur des Océans, établissant des liens étroits avec les étendues d'eau
+                qui les entourent. Leur connexion profonde avec les mers et les océans fait d'eux d'excellents
+                navigateurs et protecteurs des fonds marins. Vivant depuis la cité du Cœur, ils honorent Yndraosa.
+            </p>
+            <p>Bonus accordé  : Offre un bonus de +2 en Survie et Athlétisme  + Respiration Aquatique.</p>
+        `
+    },
+    {
+        name: 'Lyein',
+        description: 'Les Lyeins (Les Eins Noirs), sont des êtres énigmatiques et mystérieux, évoluant dans les ombres ' +
+            'et les recoins obscurs des Limbes, Les Elfes Noirs, habitants des terres ténébreuses et complexes, se ' +
+            'répartissent en quatre factions, chacune dédiée à une entité sombre et puissante.',
+        image: '/images/races/race-lyein.jpg',
+        racialSkills: [
+            {
+                name: 'Lignée Chaotique',
+                description: 'Un Ein de la Lignée Chaotique est insensible aux dégâts de Chaos, il possède un bonus de ' +
+                    '+2 via sa Caste, représentant ses connaissances. Cependant, les dégâts de type Lumière sont ' +
+                    'doublés ! Son total d’endurance augmente de +3',
+                image: null
+            }
+        ],
+        armorType: [Armor.LIGHT, Armor.INTERMEDIATE, Armor.HEAVY],
+        additionalInfo: `            
+            <h4>Eternien</h4>
+            <p>
+                Les Eterniens, fervents partisans de la Reine Araignée Eternia, sont maîtres dans les arts de l'intrigue 
+                et du voile. Arborant des oreilles pointues, une peau violacée et des yeux rosés, ils tissent des toiles 
+                complexes de pouvoir et de subterfuge dans l'ombre. Leur connexion avec la Toile de l'Araignée leur confère 
+                une habileté unique à naviguer dans les mystères et les complots qui tissent le tissu de leur existence.
+            </p>
+            <p>Bonus accordé  : Offre un bonus de +2 en Tromperie et Persuasion, ne porte pas d’armures lourdes.</p>
+            
+            <h4>Athréen</h4>
+            <p>
+                Les Athréens, partisans de la destruction et du ravage, vouent leur allégeance à Ketur, le maître du 
+                chaos. Reconnaissables par leurs oreilles pointues, peau sombre et yeux sombres, les Athréens cherchent 
+                à semer le désordre et la discorde, répandant le chaos dans le monde qui les entoure. Leur lignée chaotique 
+                les guide vers des actes de destruction, faisant d'eux des agents du déséquilibre.
+            </p>
+            <p>Bonus accordé  : Offre un bonus de +2 en Arcane et Religion.</p>
+            
+            <h4>Arcadien</h4>
+            <p>
+                Les Arcadiens, descendants des entités Atréus et Arethis, incarnent la dualité du destin et de l'épine. 
+                Caractérisés par leurs oreilles pointues, peau grise et yeux orange, les Arcadiens excellent dans les arts 
+                de la discrétion et de la prédiction. Leur héritage sinistre les conduit souvent à utiliser leurs dons 
+                pour des desseins mystérieux et sombres, faisant d'eux des acteurs intrigants dans les jeux du destin. 
+            </p>
+            <p>Bonus accordé  : Offre un bonus de +2 en Discrétion et Intuition , ne porte pas d’armures lourdes.</p>
+        `
+    },
+    {
+        name: 'Nain',
+        description: 'Les Nains sont généralement caractérisés par leur petite taille, leur robustesse physique, leur ' +
+            'talent pour l\'artisanat et leur amour pour les richesses souterraines. Originaires des montagnes, les ' +
+            'nains sont réputés pour leur maîtrise de la forge, leur habileté à travailler les métaux et leur ingéniosité ' +
+            'dans la construction d\'ouvrages souterrains complexes.',
+        image: '/images/races/race-nain.jpg',
+        racialSkills: [
+            {
+                name: 'Né de la Montagne',
+                description: 'Les individus nés de la Montagne sont compétents dans l\'utilisation de toutes les armes,' +
+                    'quelle que soit leur classe ou leur spécialisation. Il gagne un bonus selon son clan de provenance' +
+                    'et un bonus de +2 à son score d\'attaque. (Physique, À Distance ou Magique.)',
+                image: null
+            }
+        ],
+        armorType: [Armor.LIGHT, Armor.INTERMEDIATE, Armor.HEAVY],
+        additionalInfo: `            
+            <h4>Clan de provenance</h4>
+            
+            <h4>Hurle-Dragon</h4>
+            <p>
+                Nains Guerriers de Hjalmar, sont une lignée de Nains fortement orientée vers la guerre et les monteurs 
+                de Dragons. Ils sont réputés pour leur courage indomptable sur le champ de bataille, maniant haches, 
+                marteaux et autres armes naines avec une maîtrise exceptionnelle.
+            </p>
+            <p>Bonus accordé  : Offre un bonus de +2 en Dressage et Athlétisme.</p>
+            
+            <h4>Givre-Né</h4>
+            <p>
+                Les Givre-Né, ou Nains des Cavernes, sont des experts dans l'exploitation des profondeurs souterraines.
+                Leur habileté à naviguer dans les labyrinthes complexes des cavernes et des mines en fait d'excellents 
+                mineurs, découvreurs de trésors cachés et défenseurs des royaumes souterrains.
+            </p>
+            <p>Bonus accordé  : Offre un bonus de +2 en Survie et Nature , ne porte pas d’armures lourdes.</p>
+            
+            <h4>Kyn'Taris</h4>
+            <p>
+                Les Kyn'Taris sont une caste particulière parmi les Nains, embrassant le chemin monastique dédié à Kytan.
+                Ces Nains moines consacrent leur vie à l'idéalisme, une philosophie qui suggère que si le Divin peut être
+                mortel, alors le Mortel peut atteindre la divinité. Ils combinent astucieusement leur discipline spirituelle 
+                avec les compétences d'ingénierie naine, créant ainsi une harmonie entre la sagesse sacrée et la technologie. 
+            </p>
+            <p>Bonus accordé  : Offre un bonus de +2 en Religion et Acrobatie , ne porte pas d’armures lourdes.</p>
+            
+            <h4>Atrevin</h4>
+            <p>
+                Les Atrevins, Nains de l'Âtre Foyer, excellent dans l'artisanat de la pierre et de la métallurgie. Leurs 
+                cités, taillées dans les montagnes, abritent des forges ardentes où les Atrevins forgent des armes et des 
+                armures renommées. 
+            </p>
+            <p>Bonus accordé  : Offre un bonus de +2 en Escamotage et Histoire .</p>
+        `
+    }
+]
 ---
 
 <BaseLayout
@@ -150,33 +357,17 @@ const mortalRaces: Race[] = [
 
             <div class="flex flex-col gap-10">
                 {
-                    mortalRaces.map((race, key) =>
-                        (<SideImageTextLayout image={race.image} title={race.name} reverse={key % 2 !== 0}>
-                            <p>{race.description}</p>
+                    mortalRaces.map((race, key) => <SideImageTextLayout race={race} reverse={key % 2 !== 0} />)
+                }
+            </div>
+        </div>
 
-                            <h3>Compétence raciale</h3>
-                            <ul>
-                                {
-                                    race.racialSkills.map(skill => <li>{skill.description}</li>)
-                                }
-                            </ul>
+        <div class="mb-12">
+            <h4 class="text-primary">Races anciennes</h4>
 
-                            <h3>Maîtrise d'armure</h3>
-                            <ul>
-                                {
-                                    race.armorType.map(type => <li class="capitalize">{type}</li>)
-                                }
-                            </ul>
-
-                            {
-                                race.additionalInfo &&
-                                <div>
-                                    <h3>Notes supplémentaires</h3>
-                                    <Fragment set:html={race.additionalInfo} />
-                                </div>
-                            }
-                        </SideImageTextLayout>)
-                    )
+            <div class="flex flex-col gap-10">
+                {
+                    elderRaces.map((race, key) => <SideImageTextLayout race={race} reverse={key % 2 !== 0} />)
                 }
             </div>
         </div>

@@ -1,15 +1,36 @@
 ---
-const { image, title, reverse } = Astro.props;
+const { race, reverse } = Astro.props;
 ---
 
 <div>
-    <h3 class="text-center">{title}</h3>
+    <h3 class="text-center">{race.name}</h3>
     <div class:list={['lg:flex gap-4', reverse && 'flex-row-reverse']}>
         <div class="my-4 lg:flex-1">
-            <img class="m-auto rounded-lg" src={image} alt={'race-' + title} />
+            <img class="m-auto rounded-lg" src={race.image} alt={'race-' + race.name} />
         </div>
         <div class="flex-1 text-justify">
-            <slot />
+            <p>{race.description}</p>
+
+            <h3>Compétence raciale</h3>
+            <ul>
+                {
+                    race.racialSkills.map(skill => <li>{skill.description}</li>)
+                }
+            </ul>
+
+            <h3>Maîtrise d'armure</h3>
+            <ul>
+                {
+                    race.armorType.map(type => <li class="capitalize">{type}</li>)
+                }
+            </ul>
         </div>
     </div>
+    {
+        race.additionalInfo &&
+            <div class="text-justify">
+                <h3>Notes supplémentaires</h3>
+                <Fragment set:html={race.additionalInfo} />
+            </div>
+    }
 </div>
