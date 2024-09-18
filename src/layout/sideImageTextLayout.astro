@@ -1,4 +1,5 @@
 ---
+import Skill from "../models/Skill";
 const { race, reverse } = Astro.props;
 ---
 
@@ -14,14 +15,14 @@ const { race, reverse } = Astro.props;
             <h3>Compétence raciale</h3>
             <ul>
                 {
-                    race.racialSkills.map(skill => <li>{skill.description}</li>)
+                    race.racialSkills.map((skill: Skill) => <li>{skill.description}</li>)
                 }
             </ul>
 
             <h3>Maîtrise d'armure</h3>
             <ul>
                 {
-                    race.armorType.map(type => <li class="capitalize">{type}</li>)
+                    race.armorType.map((type: string) => <li class="capitalize">{type}</li>)
                 }
             </ul>
         </div>

@@ -8,34 +8,6 @@ import Armor from '@/enums/Armor';
 
 const pageTitle: string = 'Création du héros'
 
-const formatInfoRace = (race: Race, key: number) => {
-    return `<SideImageTextLayout image={race.image} title={race.name} reverse={key % 2 !== 0}>
-    <p>{race.description}</p>
-
-    <h3>Compétence raciale</h3>
-    <ul>
-    {
-        race.racialSkills.map(skill => <li>{skill.description}</li>)
-    }
-    </ul>
-
-    <h3>Maîtrise d'armure</h3>
-    <ul>
-    {
-        race.armorType.map(type => <li class="capitalize">{type}</li>)
-    }
-    </ul>
-
-    {
-        race.additionalInfo &&
-        <div>
-            <h3>Notes supplémentaires</h3>
-    <Fragment set:html={race.additionalInfo} />
-    </div>
-    }
-    </SideImageTextLayout>`
-}
-
 const prototypes: Card[] = [
     {
         title: 'Les races mortelles',
