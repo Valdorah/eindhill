@@ -1,10 +1,14 @@
 ---
 import BaseLayout from '@/layout/baseLayout.astro'
 import SideImageTextLayout from '@/layout/sideImageTextLayout.astro'
-import {SimpleCard} from "../../components/ui/simple-card";
+import {SimpleCard} from "../../components/ui/simple-card"
+import { LinkCard } from "@/components/ui/link-card"
 import Card from "@/models/Card"
-import type Race from '@/models/Race';
-import Armor from '@/enums/Armor';
+import type Race from '@/models/Race'
+import Armor from '@/enums/Armor'
+
+import steps from '@/database/step.json'
+import prototypes from '@/database/prototype.json'
 
 const pageTitle: string = 'Création du héros'
 
@@ -35,33 +39,6 @@ const formatInfoRace = (race: Race, key: number) => {
     }
     </SideImageTextLayout>`
 }
-
-const prototypes: Card[] = [
-    {
-        title: 'Les races mortelles',
-        content: 'Les races mortelles comprennent les êtres vivants ordinaires ou mortels qui peuplent le monde. Elles' +
-            ' sont souvent sujettes à la mort et à la mortalité, contrairement à certaines races immortelles ou divines.',
-        image: '/images/races-mortelles.png',
-        url: null,
-        textLink: null
-    },
-    {
-        title: 'Les Races Anciennes',
-        content: 'Les races anciennes font référence à des groupes de créatures qui existent depuis longtemps dans le' +
-            ' monde. Elles ont souvent une histoire riche et ancienne, remontant à des époques reculées de l\'univers.',
-        image: '/images/races-anciennes.jpg',
-        url: null,
-        textLink: null
-    },
-    {
-        title: 'Les Races Hybrides',
-        content: 'Les races hybrides peuvent ajouter de la diversité et de l\'intérêt à un monde fantastique en' +
-            ' combinant différentes cultures, perspectives et pouvoirs magiques. ',
-        image: '/images/races-hybrides.webp',
-        url: null,
-        textLink: null
-    }
-];
 
 const mortalRaces: Race[] = [
     {
@@ -313,6 +290,102 @@ const elderRaces: Race[] = [
         `
     }
 ]
+
+const hybrideRaces: Race[] = [
+    {
+        name: 'Sylvaloniens',
+        description: 'Les Sylvaloniens sont une race de créatures singulières touchées par la peste verte, une maladie ' +
+            'mystérieuse et dévastatrice qui transforme progressivement leur corps en une forme arbustive ou arborescente. ' +
+            'Jadis semblables à des humains, les Sylvaloniens subissent une métamorphose lente et inexorable, leur peau ' +
+            'prenant une teinte verdâtre, leurs membres s\'ossifiant et se transformant en branches.',
+        image: '/images/races/race-sylvalonien.jpg',
+        racialSkills: [
+            {
+                name: 'Touché par la Peste Verte',
+                description: 'Les individus touchés par la Peste Verte bénéficient d\'une constitution renforcée mais ' +
+                    'leur agilité en est diminuée. Ils sont plus vulnérables aux flammes.',
+                image: null
+            }
+        ],
+        armorType: [Armor.LIGHT, Armor.INTERMEDIATE],
+        additionalInfo: `
+            <h4>Touché par la Peste Verte</h4>
+            
+            <h4>Bonus de +2 en Constitution</h4>
+            <p>
+                Confère une résistance accrue aux maladies, aux blessures et aux épreuves physiques.
+            </p>
+            
+            <h4>Malus de -2 en Dextérité</h4>
+            <p>
+                Affectant la réactivité et la précision des individus touchés.
+            </p>
+            
+            <h4>Bonus de +2 (en choisir deux) en Survie, Nature, Médecine</h4>
+            <p>
+                En raison de leur connexion renforcée avec la nature, les individus touchés peuvent choisir deux 
+                compétences parmi Survie, Nature et Médecine dans lesquelles ils excellent particulièrement, bénéficiant 
+                d'une expertise accrue dans ces domaines.
+            </p>
+            
+            <h4>Immunité aux dégâts de nature, maladie et poison</h4>
+            <p>
+                Les individus touchés par la Peste Verte sont insensibles aux effets des dégâts de nature, des maladies 
+                et des poisons, grâce à leur constitution altérée par la maladie.
+            </p>
+            
+            <h4>Vulnérabilité aux dégâts de feu</h4>
+            <p>
+                Cependant, ils sont particulièrement sensibles aux dégâts de feu, prenant le double de dégâts en cas 
+                d'exposition à des flammes.
+            </p>
+        `
+    },
+    {
+        name: 'Demi-Eins',
+        description: 'Les Demi-Ein sont une fusion harmonieuse entre les mystérieux Eins et les polyvalents Humains, ' +
+            'héritant des traits distincts de chacune de ces races. Il existe plusieurs variantes de Demi-Ein, chacune ' +
+            'portant les marques spécifiques de son ascendance.',
+        image: '/images/races/race-demi-ein.jpg',
+        racialSkills: [
+            {
+                name: 'Double Ascendance',
+                description: 'Les individus dotés de la Double Ascendance héritent à la fois de l\'instinct de survie ' +
+                    'des humains et des traits distinctifs des elfes, en fonction de leur lignée elfique spécifique ainsi ' +
+                    'que sa maîtrise d’armure.',
+                image: null
+            }
+        ],
+        armorType: [Armor.LIGHT, Armor.INTERMEDIATE, Armor.HEAVY],
+        additionalInfo: `
+            <h4>Double ascendance</h4>
+            
+            <h4>Instinct de Survie</h4>
+            <p>
+                Si un coup doit vous conduire à 0 PV, une fois par combat, vous utilisez votre compétence raciale 
+                automatiquement, divisant ainsi les dégâts subis de l'attaque par 2 ! (1 pt de dégât obligatoire).
+            </p>
+            
+            <h4 class="text-primary bold">choisir une des lignées ci-dessous (Voir Races Anciennes)</h4>
+            <ul>
+                <li>
+                    <h5>Lignée Chaotique</h5>
+                    <p>
+                        Insensible aux dégâts de Chaos, il possède un bonus de +2 via sa Caste. 
+                        Cependant, les dégâts de type Lumière sont doublés !  +3 Endurance
+                    </p>
+                </li>
+                <li>
+                    <h5>Lumière du Fondateur</h5>
+                    <p>
+                        Insensible aux dégâts de Lumière, il possède un bonus de +2 via sa Caste. Cependant, 
+                        les dégâts de type Chaos sont doublés !  +3 Mana
+                    </p>
+                </li>
+            </ul>
+        `
+    },
+]
 ---
 
 <BaseLayout
@@ -353,7 +426,7 @@ const elderRaces: Race[] = [
         </div>
 
         <div class="mb-12">
-            <h4 class="text-primary">Races Mortelles</h4>
+            <h4 class="text-primary">Races mortelles</h4>
 
             <div class="flex flex-col gap-10">
                 {
@@ -368,6 +441,37 @@ const elderRaces: Race[] = [
             <div class="flex flex-col gap-10">
                 {
                     elderRaces.map((race, key) => <SideImageTextLayout race={race} reverse={key % 2 !== 0} />)
+                }
+            </div>
+        </div>
+
+        <div class="mb-12">
+            <h4 class="text-primary">Races hybrides</h4>
+
+            <div class="flex flex-col gap-10">
+                {
+                    hybrideRaces.map((race, key) => <SideImageTextLayout race={race} reverse={key % 2 !== 0} />)
+                }
+            </div>
+        </div>
+
+        <div class="mb-12">
+            <h3>Prochaines étapes !</h3>
+            <div
+                    class="grid gap-4 grid-cols-1 lg:grid-cols-3"
+            >
+                {
+                    steps
+                        .filter(step => step.code === 'CLASSE' || step.code === 'SYSTEME')
+                        .map(card => (
+                            <LinkCard
+                                image={card.image}
+                                title={card.title}
+                                content={card.content}
+                                textLink={card.textLink}
+                                url={card.url}
+                            />
+                        ))
                 }
             </div>
         </div>
