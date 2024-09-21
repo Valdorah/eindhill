@@ -1,10 +1,59 @@
 ---
 import BaseLayout from '@/layout/baseLayout.astro'
 
+import classes from '@/database/classe.json'
+import SideImageTextLayout from "../../layout/sideImageTextLayout.astro";
+
 const pageTitle = 'Création du héros';
 ---
 
 <BaseLayout
         pageTitle={pageTitle}
 >
+    <section class="container mb-6">
+        <header class="mb-12">
+            <h2>{pageTitle}</h2>
+
+            <h3 class="text-center">Les classes</h3>
+
+            <p>
+                Avant-propos : Dans ce monde, toutes les classes possèdent les attributs d'Endurance, de Vie et de Mana,
+                indépendamment de leur utilisation de la magie. Chaque personnage est doté d'une maîtrise, un pouvoir
+                unique qui lui est intrinsèquement lié. Cette maîtrise imposée ou au choix du joueur représente une
+                puissance particulière et exclusive, souvent associée à un élément spécifique tel que la glace, le feu,
+                la foudre, etc. Chaque individu ne maîtrise qu'un seul élément, celui qui lui est propre depuis sa
+                naissance.
+            </p>
+        </header>
+
+        <article>
+            <div class="mb-12">
+                <div class="flex flex-col gap-10">
+                    {
+                        classes.map(classe =>
+                            <div>
+                                <h3 class="text-center">{classe.name}</h3>
+                                <img src={classe.image} alt={classe.name} />
+                                <p>{classe.description}</p>
+
+                                <h3>Pouvoirs</h3>
+                                <ul>
+                                    {
+                                        classe.powers.map(power => <li>{power.label} : {power.value}</li>)
+                                    }
+                                </ul>
+
+                                <h3>Spécialisation et maîtrises d'armes</h3>
+                                <p>Spécialisation : {classe.specialisation.join(', ')}</p>
+                                <p>Maîtrise d'armes : {classe.weapons.join(', ')}</p>
+
+                                <h3>Compétences de classe</h3>
+
+                            </div>
+                        )
+                    }
+                </div>
+            </div>
+        </article>
+    </section>
 </BaseLayout>

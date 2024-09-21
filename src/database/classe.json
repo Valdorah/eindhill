@@ -1,0 +1,30 @@
+[
+  {
+    "name": "Chevalier",
+    "image": "/images/classes/class-knight.jpg",
+    "description": "Les Chevaliers sont des combattants de la noblesse, élevés dans la tradition du combat éthique et de la loyauté inébranlable envers leurs seigneurs. Leur formation militaire est complète, comprenant le maniement des armes, l'équitation et l'art de la tactique. Sur le champ de bataille, ils incarnent la force et la défense de leur royaume. La classe Chevalier offre aux joueurs la possibilité de rejoindre un ordre s'ils le souhaitent.",
+    "powers": [
+      {
+        "label": "Points de vie",
+        "value": "1D12"
+      },
+      {
+        "label": "Points de Mana",
+        "value": "1D6(INT)"
+      },
+      {
+        "label": "Points d'endurance",
+        "value": "1D8(FOR)"
+      }
+    ],
+    "skill": [
+      {
+        "name": "Défense Impénétrable",
+        "limited": true,
+        "description": "Les Chevaliers sont des maîtres de la défense, capables de protéger leurs compagnons d'armes avec une habileté et une détermination sans faille. Leur compétence leur permet de se placer entre leurs alliés et leurs ennemis, absorbant les coups et repoussant les assauts avec une grâce impressionnante. ( +1 en Def pour chaque héros derrière lui dans un rayon de 5m)."
+      }
+    ],
+    "weapons": ["Intermédiaire", "Lourde"],
+    "specialisation": ["Force", "Charisme"]
+  }
+]
