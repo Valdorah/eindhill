@@ -14,9 +14,9 @@ const pageTitle = 'Création du héros';
         <header class="mb-12">
             <h2>{pageTitle}</h2>
 
-            <h3 class="text-center">Les classes</h3>
+            <h3 class="text-4xl text-center">Les classes</h3>
 
-            <p>
+            <p class="text-justify">
                 Avant-propos : Dans ce monde, toutes les classes possèdent les attributs d'Endurance, de Vie et de Mana,
                 indépendamment de leur utilisation de la magie. Chaque personnage est doté d'une maîtrise, un pouvoir
                 unique qui lui est intrinsèquement lié. Cette maîtrise imposée ou au choix du joueur représente une
@@ -32,9 +32,9 @@ const pageTitle = 'Création du héros';
                     {
                         classes.map(classe =>
                             <div>
-                                <h3 class="text-center">{classe.name}</h3>
-                                <img src={classe.image} alt={classe.name} />
-                                <p>{classe.description}</p>
+                                <h3 class="text-center text-3xl">{classe.name}</h3>
+                                <img class="mt-6 mb-12" src={classe.image} alt={classe.name} />
+                                <p class="text-justify">{classe.description}</p>
 
                                 <h3>Pouvoirs</h3>
                                 <ul>
