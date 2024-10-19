@@ -1,7 +1,7 @@
 [
   {
     "name": "Chevalier",
-    "image": "/images/classes/classe-chevalier.jpg",
+    "image": "/images/classes/classe-chevalier.png",
     "description": "Les Chevaliers sont des combattants de la noblesse, élevés dans la tradition du combat éthique et de la loyauté inébranlable envers leurs seigneurs. Leur formation militaire est complète, comprenant le maniement des armes, l'équitation et l'art de la tactique. Sur le champ de bataille, ils incarnent la force et la défense de leur royaume. La classe Chevalier offre aux joueurs la possibilité de rejoindre un ordre s'ils le souhaitent.",
     "powers": [
       {
@@ -17,7 +17,7 @@
         "value": "1D8(FOR)"
       }
     ],
-    "skill": [
+    "skills": [
       {
         "name": "Défense Impénétrable",
         "limited": true,
@@ -29,7 +29,7 @@
   },
   {
     "name": "Guerrier",
-    "image": "/images/classes/class-guerrier.jpg",
+    "image": "/images/classes/classe-guerrier.png",
     "description": "Les Guerriers sont des combattants polyvalents, maîtrisant une grande variété d'armes et de techniques de combat. Leur formation est rigoureuse, couvrant toutes les facettes du combat, de l'escrime à la tactique militaire. Ils sont les piliers des armées et des compagnies d'aventuriers, protégeant les faibles et terrassant les ennemis avec une efficacité redoutable.",
     "powers": [
       {
@@ -45,7 +45,7 @@
         "value": "1D8(FOR)"
       }
     ],
-    "skill": [
+    "skills": [
       {
         "name": "Maître d'armes",
         "limited": true,
@@ -57,7 +57,7 @@
   },
   {
     "name": "Barbare",
-    "image": "/images/classes/classe-barbare.jpg",
+    "image": "/images/classes/classe-barbare.png",
     "description": "Les Barbares sont des guerriers féroces, issus des tribus des contrées sauvages. Ils ne connaissent pas la peur et se battent avec une rage primitive qui leur donne une force surhumaine. Leurs techniques de combat sont brutales, faisant d'eux des adversaires redoutables sur le champ de bataille. Dans les régions sauvages, naissent des barbares qui embrassent différentes voies. ",
     "powers": [
       {
@@ -73,7 +73,7 @@
         "value": "1D10(FOR)"
       }
     ],
-    "skill": [
+    "skills": [
       {
         "name": "Furie Sanguinaire",
         "limited": true,
@@ -85,7 +85,7 @@
   },
   {
     "name": "Brigand",
-    "image": "/images/classes/classe-brigand.jpg",
+    "image": "/images/classes/classe-brigand.png",
     "description": "Les Brigands sont des hors-la-loi et des mercenaires, habitués aux ruelles sombres et aux bas-fonds des grandes villes. Leur vie est faite de violence et de trahison, mais aussi de camaraderie et de loyauté envers leurs compagnons de fortune. Leur agilité et leur astuce leur permettent de survivre dans un monde où seuls les plus forts et les plus rusés s'en sortent.",
     "powers": [
       {
@@ -101,7 +101,7 @@
         "value": "1D12(DEX)"
       }
     ],
-    "skill": [
+    "skills": [
       {
         "name": "Embuscade Mortelle",
         "limited": true,
@@ -113,7 +113,7 @@
   },
   {
     "name": "Rôdeur",
-    "image": "/images/classes/classe-rodeur.jpg",
+    "image": "/images/classes/classe-rodeur.png",
     "description": "Les Rôdeurs sont des gardiens des frontières et des sentinelles des territoires sauvages. Leur connaissance de la nature et leur habileté au combat en font des compagnons précieux pour ceux qui voyagent en des terres dangereuses. Leur lien avec les animaux leur permet de communiquer avec eux et de les appeler à l'aide quand ils en ont besoin.",
     "powers": [
       {
@@ -129,7 +129,7 @@
         "value": "1D10(Dex)"
       }
     ],
-    "skill": [
+    "skills": [
       {
         "name": "Analyse des Faiblesses",
         "limited": true,
@@ -141,7 +141,7 @@
   },
   {
     "name": "Moine",
-    "image": "/images/classes/classe-moine.jpg",
+    "image": "/images/classes/classe-moine.png",
     "description": "Les Moines sont des combattants spirituels, dévoués à l'art du combat sans armes et à la méditation. Leur entraînement rigoureux leur confère une force intérieure et une agilité extraordinaires.",
     "powers": [
       {
@@ -157,7 +157,7 @@
         "value": "1D8(Dex)"
       }
     ],
-    "skill": [
+    "skills": [
       {
         "name": "Voie de l'Harmonie",
         "limited": true,
@@ -169,7 +169,7 @@
   },
   {
     "name": "Druide",
-    "image": "/images/classes/classe-druide.jpg",
+    "image": "/images/classes/classe-druide.png",
     "description": "Les Druides sont les gardiens de la nature, protégeant les forêts et les animaux des ravages des hommes. Leur connexion avec les forces élémentaires de la nature leur confèrent un pouvoir magique unique, leur permettant de manipuler le monde qui les entourent pour le bien de tous.",
     "powers": [
       {
@@ -185,7 +185,7 @@
         "value": "1D8(Force)"
       }
     ],
-    "skill": [
+    "skills": [
       {
         "name": "Lien Naturel",
         "limited": true,
@@ -197,7 +197,7 @@
   },
   {
     "name": "Sorcière",
-    "image": "/images/classes/classe-sorciere.jpg",
+    "image": "/images/classes/classe-sorciere.png",
     "description": "Les Sorcières sont des lanceurs de sorts qui tirent leur pouvoir des forces mystiques de la magie. Leur connexion avec le monde des esprits leur confèrent un pouvoir redoutable, mais souvent incontrôlable.",
     "powers": [
       {
@@ -213,7 +213,7 @@
         "value": "1D6(FOR)"
       }
     ],
-    "skill": [
+    "skills": [
       {
         "name": "Invocateur des Ténèbres",
         "limited": true,
@@ -225,7 +225,7 @@
   },
   {
     "name": "Paladin",
-    "image": "/images/classes/classe-paladin.jpg",
+    "image": "/images/classes/classe-paladin.png",
     "description": "Les Paladins sont des champions de la foi, combattant au nom de la justice et de la lumière. Leur dévotion inébranlable et leur pouvoir divin font d'eux des protecteurs redoutables des opprimés et des faibles.",
     "powers": [
       {
@@ -241,7 +241,7 @@
         "value": "1D8(FOR)"
       }
     ],
-    "skill": [
+    "skills": [
       {
         "name": "Bénédiction Sacrée",
         "limited": true,
@@ -253,7 +253,7 @@
   },
   {
     "name": "Barde",
-    "image": "/images/classes/classe-barde.jpg",
+    "image": "/images/classes/classe-barde.png",
     "description": "Les Bardes sont des artistes itinérants et des conteurs d'histoires, utilisant leur musique et leur charisme pour inspirer leurs alliés et démoraliser leurs ennemis. Leur savoir-faire magique leur permet de manipuler les émotions et les esprits, en faisant des diplomates habiles et des combattants redoutables. Les Bardes peuvent captiver leur auditoire avec leur musique enchanteresse, les plongeant dans un état de transe ou les inspirant à des actes de courage.",
     "powers": [
       {
@@ -269,7 +269,7 @@
         "value": "1D8(DEX)"
       }
     ],
-    "skill": [
+    "skills": [
       {
         "name": "Symphonie Envoûtante / Symphonie Harmonieuse",
         "limited": true,
@@ -291,7 +291,7 @@
   },
   {
     "name": "Maître",
-    "image": "/images/classes/classe-maitre.jpg",
+    "image": "/images/classes/classe-maitre.png",
     "description": "Les Maîtres sont des mages qui maîtrisent les éléments primordiaux pour invoquer la puissance destructrice des tempêtes, des flammes et des marées. Leur pouvoir est incontrôlable, mais ceux qui peuvent le maîtriser deviennent des maîtres des arcanes élémentaires.",
     "powers": [
       {
@@ -307,7 +307,7 @@
         "value": "1D6(FOR)"
       }
     ],
-    "skill": [
+    "skills": [
       {
         "name": "Rage Élémentaire",
         "limited": true,
@@ -319,7 +319,7 @@
   },
   {
     "name": "Profanateur",
-    "image": "/images/classes/classe-profanateur.jpg",
+    "image": "/images/classes/classe-profanateur.png",
     "description": "Les Profanes sont des praticiens des arts sombres, utilisant la magie noire pour invoquer des démons et manipuler les esprits des morts. Leur pouvoir est terrifiant et corrompu, mais ceux qui peuvent le contrôler deviennent des maîtres de l'ombre.",
     "powers": [
       {
@@ -335,7 +335,7 @@
         "value": "1D6(FOR)"
       }
     ],
-    "skill": [
+    "skills": [
       {
         "name": "Destruction",
         "limited": true,
@@ -347,7 +347,7 @@
   },
   {
     "name": "Orateur",
-    "image": "/images/classes/classe-orateur.jpg",
+    "image": "/images/classes/classe-orateur.png",
     "description": "Les Orateurs sont des manipulateurs habiles, capables de convaincre et de séduire les autres avec leur charisme et leur éloquence. Leur pouvoir réside dans leur capacité à influencer les autres et à les amener à agir selon leur volonté. Les Orateurs sont des maîtres de la persuasion, capables de convaincre les autres de faire leur volonté avec des mots seuls.",
     "powers": [
       {
@@ -363,7 +363,7 @@
         "value": ""
       }
     ],
-    "skill": [
+    "skills": [
       {
         "name": "Rhétorique Persuasive",
         "limited": true,
@@ -375,7 +375,7 @@
   },
   {
     "name": "Oracle",
-    "image": "/images/classes/classe-oracle.jpg",
+    "image": "/images/classes/classe-oracle.png",
     "description": "Les Oracles sont capables de communiquer avec les dieux. Leur don divin leur confère une sagesse mystique et un pouvoir prophétique, mais il vient également avec son lot de fardeaux et de responsabilités. L'Oracle, en tant que maître des mystères et interprète des signes divins, a la capacité exceptionnelle de maîtriser diverses énergies divines en fonction de la divinité à laquelle il est dédié.",
     "powers": [
       {
@@ -391,7 +391,7 @@
         "value": "1D8(FOR ou DEX)"
       }
     ],
-    "skill": [
+    "skills": [
       {
         "name": "Appel Divin",
         "limited": true,
@@ -400,72 +400,6 @@
     ],
     "weapons": ["Légère", "Intermédiaire", "Lourde"],
     "specialisation": ["Sagesse", "Charisme", "Force"]
-  },
-  {
-    "name": "Ulfark",
-    "image": "/images/classes/classe-ufark.jpg",
-    "description": "Les Ulfarks sont des lycanthropes ayant subi la malédiction du Loup. Pour ceux qui arrivent à bien se maîtriser ils peuvent choisir de se transformer en Ulfark selon la malédiction reçue (Loup Blanc ou Noir) L’Ulfark laisse la bête qui est en lui prendre le dessus pour se transformer en loup, il ne peut plus se servir de magie mais adopte les qualités de l’animal.",
-    "powers": [
-      {
-        "label": "Points de vie",
-        "value": "1D8"
-      },
-      {
-        "label": "Points de Mana",
-        "value": "1D8(CHA)"
-      },
-      {
-        "label": "Points d'endurance",
-        "value": "1D8(FOR)"
-      }
-    ],
-    "skill": [
-      {
-        "name": "Le Touché de l'Ulfark",
-        "limited": true,
-        "description": "Points de Vie = 1D10 Points de Mana = 1D0(INT) Points d’Endurance = 1D12(DEX)"
-      },
-      {
-        "name": "Ulfark Noir",
-        "limited": true,
-        "description": "(Limité) - Le Touché de l'Ulfark offre une compétence en Ulfark (Noir) ce qui augmente de +2 le Jet de Survie (Feu) et son score de def de +2 et de +30% la capacité de déplacement."
-      },
-      {
-        "name": "Ulfark Blanc",
-        "limited": false,
-        "description": "(Limité) -  Le Touché de l'Ulfark offre une compétence en Ulfark (Blanc) ce qui augmente de +2 le Jet de Survie (Givre) et son score de def de +2  et de +30% la capacité de déplacement."
-      }
-    ],
-    "weapons": ["Intermédiaire", "Lourde"],
-    "specialisation": ["Force", "Charisme"]
-  },
-  {
-    "name": "Sang-Pur",
-    "image": "/images/classes/classe-sang-pur.jpg",
-    "description": "Les Sang-pur sont des êtres maudits et deviennent immortels au prix d’une soif de sang difficilement contrôlable. Passés maître dans l’art de la séduction, ils peuvent influencer et imposer sa domination sur les esprits faibles.",
-    "powers": [
-      {
-        "label": "Points de vie",
-        "value": "1D10"
-      },
-      {
-        "label": "Points de Mana",
-        "value": "1D8(CHA)"
-      },
-      {
-        "label": "Points d'endurance",
-        "value": "1D10(FOR)"
-      }
-    ],
-    "skill": [
-      {
-        "name": "Vampirisme",
-        "limited": true,
-        "description": "(passif) - (  Le Vampirisme offre un bonus de +2 à tous les jets de sauvegarde contre les attaques magiques, cependant, il subit un malus de -1 à ses scores d'attaque et de défense en journée ) (Actif L* ) - ( Permet de récupérer 1D4 de PV si et seulement si une source de sang se trouve proche.)"
-      }
-    ],
-    "weapons": ["Légère", "Intermédiaire", "Lourde"],
-    "specialisation": ["Force", "Charisme", "Sagesse", "Constitution"]
   },
   {
     "name": "Runiste",
@@ -485,7 +419,7 @@
         "value": "1D10(DEX)"
       }
     ],
-    "skill": [
+    "skills": [
       {
         "name": "Puissance Tellurique",
         "limited": true,

@@ -77,15 +77,15 @@
   }
 
   h2 {
-    @apply text-primary my-4 text-3xl md:text-5xl lg:text-6xl;
+    @apply text-primary my-4 text-4xl;
   }
 
   h3 {
-    @apply text-white my-4 text-xl md:text-3xl lg:text-4xl;
+    @apply text-white my-4 text-3xl;
   }
 
   h4 {
-    @apply text-white my-3 text-xl md:text-2xl lg:text-3xl;
+    @apply text-white my-3 text-2xl;
   }
 
   strong {
