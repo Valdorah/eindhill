@@ -1,0 +1,63 @@
+---
+import BaseLayout from '@/layout/baseLayout.astro'
+
+import classes from '@/database/classe.json'
+import SideImageTextLayout from "../../layout/sideImageTextLayout.astro";
+
+const pageTitle = 'Création du héros';
+---
+
+<BaseLayout
+        pageTitle={pageTitle}
+>
+    <section class="container mb-6">
+        <header class="mb-12">
+            <h2>{pageTitle}</h2>
+
+            <h3 class="text-center">Les classes</h3>
+
+            <p class="text-justify">
+                Avant-propos : Dans ce monde, toutes les classes possèdent les attributs d'Endurance, de Vie et de Mana,
+                indépendamment de leur utilisation de la magie. Chaque personnage est doté d'une maîtrise, un pouvoir
+                unique qui lui est intrinsèquement lié. Cette maîtrise imposée ou au choix du joueur représente une
+                puissance particulière et exclusive, souvent associée à un élément spécifique tel que la glace, le feu,
+                la foudre, etc. Chaque individu ne maîtrise qu'un seul élément, celui qui lui est propre depuis sa
+                naissance.
+            </p>
+        </header>
+
+        <article>
+            <div class="mb-12">
+                <div class="flex flex-col gap-10">
+                    {
+                        classes.map(classe =>
+                            <div>
+                                <h3 class="text-primary text-center">{classe.name}</h3>
+                                <img class="mt-6 mb-12 w-full lg:w-1/2 lg:m-auto" src={classe.image} alt={classe.name} />
+                                <p class="text-justify">{classe.description}</p>
+
+                                <h4 class="text-primary">Pouvoirs</h4>
+                                <ul>
+                                    {
+                                        classe.powers.map(power => <li>{power.label} : {power.value}</li>)
+                                    }
+                                </ul>
+
+                                <h4 class="text-primary">Spécialisation et maîtrises d'armes</h4>
+                                <p>Spécialisation : {classe.specialisation.join(', ')}</p>
+                                <p>Maîtrise d'armes : {classe.weapons.join(', ')}</p>
+
+                                <h4 class="text-primary">Compétences de classe</h4>
+                                <ul>
+                                    {
+                                        classe.skills.map(skill => <li class="text-justify"><span class="font-bold">{skill.name} {skill.limited && <span>(L*)</span>} :</span> {skill.description}</li>)
+                                    }
+                                </ul>
+                            </div>
+                        )
+                    }
+                </div>
+            </div>
+        </article>
+    </section>
+</BaseLayout>

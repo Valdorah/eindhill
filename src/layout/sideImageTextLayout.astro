@@ -1,0 +1,37 @@
+---
+import Skill from "../models/Skill";
+const { race, reverse } = Astro.props;
+---
+
+<div>
+    <h4 class="text-center text-primary">{race.name}</h4>
+    <div class:list={['lg:flex gap-4', reverse && 'flex-row-reverse']}>
+        <div class="my-4 lg:flex-1">
+            <img class="m-auto rounded-lg" src={race.image} alt={'race-' + race.name} />
+        </div>
+        <div class="flex-1 text-justify">
+            <p>{race.description}</p>
+
+            <h4 class="text-primary">Compétence raciale</h4>
+            <ul>
+                {
+                    race.racialSkills.map((skill: Skill) => <li>{skill.description}</li>)
+                }
+            </ul>
+
+            <h4 class="text-primary">Maîtrise d'armure</h4>
+            <ul>
+                {
+                    race.armorType.map((type: string) => <li class="capitalize">{type}</li>)
+                }
+            </ul>
+        </div>
+    </div>
+    {
+        race.additionalInfo &&
+            <div class="text-justify">
+                <h4>Notes supplémentaires</h4>
+                <Fragment set:html={race.additionalInfo} />
+            </div>
+    }
+</div>

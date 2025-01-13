@@ -7,8 +7,8 @@
     --background: 0 0% 100%;
     --foreground: 0 0% 0%;
 
-    --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card: 0 0% 12%;
+    --card-foreground: 0 0% 100%;
 
     --popover: 0 0% 100%;
     --popover-foreground: 222.2 84% 4.9%;
@@ -24,7 +24,7 @@
 
     /* --accent: 210 40% 96.1%; */
     --accent: 330, 2%, 18%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    --accent-foreground: 0 0 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
@@ -34,36 +34,6 @@
     --ring: 222.2 84% 4.9%;
 
     --radius: 0.5rem;
-  }
-
-  .dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
   }
 
   * {
@@ -107,11 +77,23 @@
   }
 
   h2 {
-    @apply text-primary my-4 capitalize text-3xl md:text-5xl lg:text-6xl;
+    @apply text-primary my-4 text-4xl;
+  }
+
+  h3 {
+    @apply text-white my-4 text-3xl;
+  }
+
+  h4 {
+    @apply text-white my-3 text-2xl;
+  }
+
+  strong {
+    @apply text-primary;
   }
 
   .main-page {
-    @apply relative after:content-[''] after:absolute after:left-0 after:top-0 after:h-full after:w-full after:bg-[url('/public/images/eindhill_logo.png')] after:bg-no-repeat after:bg-cover after:opacity-30;
+    @apply relative after:content-[''] after:absolute after:left-0 after:top-0 after:h-full after:w-full after:bg-[url('/images/eindhill_logo.png')] after:bg-no-repeat after:bg-cover after:opacity-30;
   }
 
   .main-page::after {

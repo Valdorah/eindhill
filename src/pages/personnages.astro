@@ -1,17 +1,412 @@
 ---
 import BaseLayout from '@/layout/baseLayout.astro'
+import { LinkCard } from "../components/ui/link-card"
+import { SimpleTable } from "../components/ui/simple-table";
+import { SimpleCard } from "../components/ui/simple-card";
+import Skill from "@/models/Skill"
+import Card from "@/models/Card"
+import Caracteristic from "@/models/Caracteristic";
 
-const pageTitle: string = 'personnages'
+import steps from '@/database/step.json';
+
+const pageTitle: string = 'Création du Héros'
+
+const caracteristics: Caracteristic[] = [
+    {
+        name: 'Consitution',
+        description: 'La constitution reflète la robustesse physique et la santé globale d\'un personnage. Elle influe' +
+            ' sur sa résistance aux maladies, aux poisons et sa capacité à encaisser des dégâts au combat.',
+        image: null
+    },
+    {
+        name: 'Charisme',
+        description: 'Cette caractéristique mesure le pouvoir d\'influence sociale et la capacité à interagir' +
+            ' positivement avec les autres personnages du jeu. Un personnage charismatique peut être persuasif' +
+            ' ou même intimidant.',
+        image: null
+    },
+    {
+        name: 'Sagesse',
+        description: 'La sagesse représente la perception, l\'intuition et la compréhension du monde qui entoure le' +
+            ' personnage. Elle peut influencer sa capacité à percevoir des détails subtils.',
+        image: null
+    },
+    {
+        name: 'Dextérité',
+        description: 'La dextérité mesure l\'agilité et la coordination motrice d\'un personnage. Elle influe sur sa' +
+            ' précision au combat, sa capacité à esquiver des actions nécessitant une certaine habileté.',
+        image: null
+    },
+    {
+        name: 'Intelligence',
+        description: 'Cette caractéristique reflète la sagacité mentale d\'un personnage, affectant sa capacité à' +
+            ' résoudre des énigmes, à comprendre des informations complexes et à utiliser des compétences' +
+            ' intellectuelles.',
+        image: null
+    },
+    {
+        name: 'Force',
+        description: 'Représentant la puissance physique d\'un personnage, la force influence sa capacité à soulever' +
+            ' des objets lourds, à infliger des dégâts au combat et à résister à des épreuves physiques.',
+        image: null
+    }
+]
+
+const skills: Skill[] = [
+    {
+        name: 'Acrobatie',
+        description: 'Capacité à réaliser des mouvements agiles et acrobatiques.',
+        image: null
+    },
+    {
+        name: 'Arcane',
+        description: 'Connaissance et compréhension des arts magiques.',
+        image: null
+    },
+    {
+        name: "Dressage",
+        description: "Aptitude à entraîner et interagir avec des créatures.",
+        image: null
+    },
+    {
+        name: "Athlétisme",
+        description: "Compétence physique, liée à la force et à l'endurance.",
+        image: null
+    },
+    {
+        name: "Tromperie",
+        description: "Habileté à mentir et à tromper autrui.",
+        image: null
+    },
+    {
+        name: "Histoire",
+        description: "Connaissance des événements passés et des civilisations.",
+        image: null
+    },
+    {
+        name: "Intimidation",
+        description: "Capacité à inspirer la peur ou le respect.",
+        image: null
+    },
+    {
+        name: "Intuition",
+        description: "Sens aigu de la perception et de la déduction.",
+        image: null
+    },
+    {
+        name: "Investigation",
+        description: "Recherche un coupable ou une preuve.",
+        image: null
+    },
+    {
+        name: "Médecine",
+        description: "Connaissance des soins et des pratiques médicales.",
+        image: null
+    },
+    {
+        name: "Nature",
+        description: "Familiarité avec le monde naturel, plantes et animaux.",
+        image: null
+    },
+    {
+        name: "Perception magique",
+        description: "Capacité à remarquer des détails magiques.",
+        image: null
+    },
+    {
+        name: "Perception visuelle",
+        description: "Capacité à remarquer des détails.",
+        image: null
+    },
+    {
+        name: "Persuasion",
+        description: "Talent pour influencer et convaincre les autres.",
+        image: null
+    },
+    {
+        name: "Religion",
+        description: "Connaissance des croyances et des pratiques religieuses.",
+        image: null
+    },
+    {
+        name: "Représentation",
+        description: "Habileté à performer et à divertir.",
+        image: null
+    },
+    {
+        name: "Escamotage",
+        description: "Capacité à voler et à manipuler habilement des objets.",
+        image: null
+    },
+    {
+        name: "Discrétion",
+        description: "Aptitude à se déplacer silencieusement et à passer inaperçu.",
+        image: null
+    },
+    {
+        name: "Survie",
+        description: "Compétence liée à la survie en milieu sauvage.",
+        image: null
+    },
+    {
+        name: "Navigation",
+        description: "Compétence liée à la navigation.",
+        image: null
+    }
+]
 ---
 
 <BaseLayout
         pageTitle={pageTitle}
 >
-    <section class="container">
-        <h2>{ pageTitle }</h2>
+    <section class="container mb-6">
+        <header class="mb-12">
+            <h2>{ pageTitle }</h2>
 
-        <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-        </p>
+            <h3 class="text-center">Première partie</h3>
+        </header>
+
+        <div class="mb-12">
+            <p>
+                Un système de jet, dans le contexte d'un jeu de rôle, est une mécanique utilisée pour déterminer le
+                résultat d'une action entreprise par un joueur ou un personnage non joueur (PNJ) dans le cadre du jeu.
+                Il sert à introduire un élément d'incertitude et de suspense, tout en permettant de simuler les chances
+                de succès ou d'échec d'une action.
+            </p>
+            <p>
+                Le système incarne le lien entre les joueurs et l'univers fantastique qui les entoure.
+                Chaque protagoniste est façonné avec soin, doté de caractéristiques uniques, d'une histoire et de
+                compétences qui le démarquent au sein de ce monde. Ces personnages ne sont pas seulement des pions dans
+                un récit, mais des héros en devenir, façonnés par les choix et évoluant au fil des péripéties, tout en
+                contribuant de manière significative à l'histoire.
+            </p>
+        </div>
+
+        <div class="mb-12">
+            <h4>Avant de commencer</h4>
+
+            <p>
+                Un personnage est souvent défini par trois éléments principaux. Ces éléments contribuent à façonner
+                l'identité du personnage dans le cadre du jeu. En combinant ces éléments, les joueurs peuvent créer des
+                personnages uniques avec des histoires, des compétences et des capacités différentes, ce qui enrichit
+                l'expérience de jeu en offrant une grande variété d'options et de possibilités.
+            </p>
+
+            <p>
+                Ces aspects fournissent également un cadre pour le développement et la progression des personnages tout
+                au long de l'aventure, en permettant aux joueurs d'explorer différentes voies et de personnaliser leurs
+                héros en fonction de leurs préférences et de leurs objectifs.
+            </p>
+
+            <ul>
+                <li>
+                    <span class="font-bold text-primary">Ses Caractéristiques :</span>
+                    Les caractéristiques d'un personnage représentent ses attributs fondamentaux.
+                </li>
+                <li>
+                    <span class="font-bold text-primary">Sa Race :</span>
+                    La race d'un personnage désigne son origine ou son espèce dans le monde imaginaire du jeu.
+                </li>
+                <li>
+                    <span class="font-bold text-primary">Sa Classe :</span>
+                    La classe d'un personnage représente son métier, son domaine d'expertise ou son chemin de
+                    progression.
+                </li>
+            </ul>
+        </div>
+
+        <div class="mb-12">
+            <h4>Les Caractéristiques</h4>
+
+            <p>
+                Les caractéristiques servent à définir les compétences innées de chaque personnage, créant ainsi une
+                identité unique. Chaque caractéristique, telle que la force, l'intelligence, la dextérité, la sagesse,
+                le charisme et la constitution, influence les capacités du personnage dans des domaines spécifiques.
+                Par exemple, la force peut déterminer la puissance au combat, tandis que l'intelligence peut influencer
+                la capacité à résoudre des énigmes. Voici une description des Carac. :
+            </p>
+
+            <div class="grid lg:grid-cols-2 gap-4 mt-6">
+                {
+                    caracteristics.map(caracteristic => (
+                            <SimpleCard
+                                    title={caracteristic.name}
+                                    content={caracteristic.description}
+                                    image={caracteristic.image}
+                            />
+                    ))
+                }
+            </div>
+        </div>
+
+        <div class="mb-12">
+            <h4>Valeurs et Modificateurs</h4>
+            <p>
+                Les Valeurs et les Modificateurs (Mod.) des Caractéristiques définissent numériquement les capacités et
+                les compétences d'un personnage. Chaque caractéristique est associée à une Valeur graduée qui s'étend
+                généralement de 1 à 20.
+            </p>
+
+            <p>
+                Cette Valeur reflète le niveau d'aptitude du personnage dans cette caractéristique particulière.
+                La gradation des Valeurs permet de catégoriser les caractéristiques en termes de faiblesse, moyenne,
+                très bonne, exceptionnelle et surhumaine, offrant ainsi un moyen rapide d'évaluer la force globale d'un
+                personnage.
+            </p>
+
+            <p>
+                <strong>Au départ, toutes les caractéristiques possèdent une valeur de 10.</strong>
+            </p>
+
+            <div class="lg:w-1/2 m-auto my-6">
+                <SimpleTable
+                    columns={[
+                        { key: 'val', value: 'Valeurs' },
+                        { key: 'mod', value: 'Modificateurs' }
+                    ]}
+                    values={[
+                        { val: '1 à 3', mod: '-4' },
+                        { val: '4 à 5', mod: '-3' },
+                        { val: '6 à 7', mod: '-2' },
+                        { val: '8 à 9', mod: '-1' },
+                        { val: '10 à 11', mod: '0' },
+                        { val: '12 à 13', mod: '+1' },
+                        { val: '14 à 15', mod: '+2' },
+                        { val: '16 à 17', mod: '+3' },
+                        { val: '18 à 19', mod: '+4' },
+                        { val: '20 à 21', mod: '+5' }
+                    ]}
+                />
+            </div>
+
+            <p>
+                Le Modificateur, quant à lui, est dérivé de la Valeur de la Caractéristique. Il représente l'ajustement
+                numérique appliqué aux actions liées directement en jeu.
+            </p>
+
+            <p>
+                Par exemple, une caractéristique avec une valeur de 14 ou 15 aura un Modificateur de +2, ce qui signifie
+                que le personnage bénéficie d'un bonus de +2 lorsqu'il effectue des actions liées à cette Carac.
+            </p>
+
+            <p>
+                <strong>Au départ, tous les Mod. possèdent un score de +0.</strong>
+            </p>
+        </div>
+
+        <div class="mb-12">
+            <h4>Méthode de répartition</h4>
+            <p>
+                Les joueurs commencent par répartir un total de 15 points entre les valeurs des six caractéristiques,
+                chaque caractéristique pouvant recevoir entre 0 à 8 points au maximum.
+            </p>
+
+            <p>
+                Cette approche équitable vise à éviter des personnages trop puissants ou trop faibles dès le début de
+                l'aventure, assurant une expérience de jeu plus équilibrée.
+            </p>
+
+            <p>
+                Bien que considérée comme moins amusante par certains, la méthode par répartition vise à garantir une
+                équité entre les membres du groupe dès le début de l'aventure.
+            </p>
+
+            <div class="lg:w-1/2 m-auto my-6">
+                <SimpleTable
+                        columns={[
+                            { key: 'car', value: 'Caractéristiques' },
+                            { key: 'val', value: 'Valeurs' },
+                            { key: 'mod', value: 'Modificateurs' }
+                        ]}
+                        values={[
+                            { car: 'Force', val: '10', mod: '0' },
+                            { car: 'Dextérité', val: '10', mod: '0' },
+                            { car: 'Constitution', val: '10', mod: '0' },
+                            { car: 'Intelligence', val: '10', mod: '0' },
+                            { car: 'Sagesse', val: '10', mod: '0' },
+                            { car: 'Charisme', val: '10', mod: '0' }
+                        ]}
+                />
+            </div>
+
+            <p>
+                <strong>Attention, vous ne pouvez avoir que trois VALEURS paires et impaires !</strong>
+            </p>
+
+            <div class="lg:w-1/2 m-auto my-6">
+                <SimpleTable
+                    columns={[
+                        { key: 'car', value: 'Caractéristiques' },
+                        { key: 'val', value: 'Valeurs' },
+                        { key: 'mod', value: 'Modificateurs' }
+                    ]}
+                    values={[
+                        { car: 'Force', val: '13', mod: '1' },
+                        { car: 'Dextérité', val: '14', mod: '2' },
+                        { car: 'Constitution', val: '13', mod: '1' },
+                        { car: 'Intelligence', val: '12', mod: '1' },
+                        { car: 'Sagesse', val: '11', mod: '0' },
+                        { car: 'Charisme', val: '12', mod: '1' }
+                    ]}
+                />
+            </div>
+        </div>
+
+        <div class="mb-12">
+            <h4>Compétences et Bonus de Compétences</h4>
+            <p>
+                Dans un jeu de rôle, la compétence et le bonus de compétence sont des mécanismes qui déterminent le
+                degré de réussite d'un personnage dans certaines actions spécifiques.
+            </p>
+
+            <p>
+                Chaque compétence reflète une aptitude particulière du personnage et peut être utilisée dans des
+                situations spécifiques pour résoudre des défis ou des énigmes. La diversité de ces compétences offre aux
+                joueurs la possibilité d'adapter leur approche aux obstacles rencontrés dans le monde du jeu.
+                (<em>La classe apporte aussi un bonus aux compétences !</em>)
+            </p>
+
+            <p>
+                Par exemple, un personnage ayant une compétence élevée en "<em>Acrobatie</em>" sera plus habile pour réaliser
+                des mouvements agiles et acrobatiques.
+            </p>
+
+            <div class="grid lg:grid-cols-2 gap-4 mt-6">
+                {
+                    skills.map(skill => (
+                        <SimpleCard title={skill.name} content={skill.description} />
+                    ))
+                }
+            </div>
+        </div>
+
+        <div class="mb-12">
+            <h4>Bonus de Compétences</h4>
+
+            <p>
+                Le Bonus de Maîtrise représente une expertise particulière du personnage dans certaines Compétences.
+                Il offre un double bonus, ajoutant +1 et +2 respectivement à deux Compétences spécifiques choisies par
+                le joueur.
+            </p>
+        </div>
+
+        <div class="mb-12">
+            <h3>Prochaines étapes !</h3>
+            <div
+                class="grid gap-4 grid-cols-1 lg:grid-cols-3"
+            >
+                {
+                    steps.map(card => (
+                        <LinkCard
+                            image={card.image}
+                            title={card.title}
+                            content={card.content}
+                            textLink={card.textLink}
+                            url={card.url}
+                        />
+                    ))
+                }
+            </div>
+        </div>
     </section>
 </BaseLayout>

@@ -1,0 +1,432 @@
+[
+  {
+    "name": "Chevalier",
+    "image": "/images/classes/classe-chevalier.png",
+    "description": "Les Chevaliers sont des combattants de la noblesse, élevés dans la tradition du combat éthique et de la loyauté inébranlable envers leurs seigneurs. Leur formation militaire est complète, comprenant le maniement des armes, l'équitation et l'art de la tactique. Sur le champ de bataille, ils incarnent la force et la défense de leur royaume. La classe Chevalier offre aux joueurs la possibilité de rejoindre un ordre s'ils le souhaitent.",
+    "powers": [
+      {
+        "label": "Points de vie",
+        "value": "1D12"
+      },
+      {
+        "label": "Points de Mana",
+        "value": "1D6(INT)"
+      },
+      {
+        "label": "Points d'endurance",
+        "value": "1D8(FOR)"
+      }
+    ],
+    "skills": [
+      {
+        "name": "Défense Impénétrable",
+        "limited": true,
+        "description": "Les Chevaliers sont des maîtres de la défense, capables de protéger leurs compagnons d'armes avec une habileté et une détermination sans faille. Leur compétence leur permet de se placer entre leurs alliés et leurs ennemis, absorbant les coups et repoussant les assauts avec une grâce impressionnante. ( +1 en Def pour chaque héros derrière lui dans un rayon de 5m)."
+      }
+    ],
+    "weapons": ["Intermédiaire", "Lourde"],
+    "specialisation": ["Force", "Charisme"]
+  },
+  {
+    "name": "Guerrier",
+    "image": "/images/classes/classe-guerrier.png",
+    "description": "Les Guerriers sont des combattants polyvalents, maîtrisant une grande variété d'armes et de techniques de combat. Leur formation est rigoureuse, couvrant toutes les facettes du combat, de l'escrime à la tactique militaire. Ils sont les piliers des armées et des compagnies d'aventuriers, protégeant les faibles et terrassant les ennemis avec une efficacité redoutable.",
+    "powers": [
+      {
+        "label": "Points de vie",
+        "value": "1D10"
+      },
+      {
+        "label": "Points de Mana",
+        "value": "1D6(INT)"
+      },
+      {
+        "label": "Points d'endurance",
+        "value": "1D8(FOR)"
+      }
+    ],
+    "skills": [
+      {
+        "name": "Maître d'armes",
+        "limited": true,
+        "description": "Les Guerriers sont des experts dans l'art de manier les armes de toutes sortes, qu'elles soient à distance ou au corps à corps. Leur maîtrise leur permet d'infliger des dégâts supplémentaires lorsqu'ils utilisent une arme qu'ils connaissent bien, et leur agilité leur permet de changer d'arme en un clin d'œil pour s'adapter à n'importe quelle situation. ( Augmente de +2 DM si l’arme est maîtrisée, gagne +2 en Init)"
+      }
+    ],
+    "weapons": ["Légère", "Intermédiaire", "Lourde"],
+    "specialisation": ["Force", "Constitution", "Dextérité"]
+  },
+  {
+    "name": "Barbare",
+    "image": "/images/classes/classe-barbare.png",
+    "description": "Les Barbares sont des guerriers féroces, issus des tribus des contrées sauvages. Ils ne connaissent pas la peur et se battent avec une rage primitive qui leur donne une force surhumaine. Leurs techniques de combat sont brutales, faisant d'eux des adversaires redoutables sur le champ de bataille. Dans les régions sauvages, naissent des barbares qui embrassent différentes voies. ",
+    "powers": [
+      {
+        "label": "Points de vie",
+        "value": "1D10"
+      },
+      {
+        "label": "Points de Mana",
+        "value": "1D4(INT)"
+      },
+      {
+        "label": "Points d'endurance",
+        "value": "1D10(FOR)"
+      }
+    ],
+    "skills": [
+      {
+        "name": "Furie Sanguinaire",
+        "limited": true,
+        "description": "Les Barbares peuvent entrer en furie, ignorant la douleur et la fatigue pour devenir des machines à tuer. \n\n\nPendant leur rage (durée de 5 tours) , ils gagnent une force [+1 Force] et une endurance surhumaine [+1 Constitution] , mais perdent le contrôle de leurs actions, devenant des tourbillons de destruction incontrôlables. [Demandez un jet de Sauvegarde en Sagesse lors des tours de jeu.]"
+      }
+    ],
+    "weapons": ["Légère", "Intermédiaire", "Lourde"],
+    "specialisation": ["Force", "Constitution"]
+  },
+  {
+    "name": "Brigand",
+    "image": "/images/classes/classe-brigand.png",
+    "description": "Les Brigands sont des hors-la-loi et des mercenaires, habitués aux ruelles sombres et aux bas-fonds des grandes villes. Leur vie est faite de violence et de trahison, mais aussi de camaraderie et de loyauté envers leurs compagnons de fortune. Leur agilité et leur astuce leur permettent de survivre dans un monde où seuls les plus forts et les plus rusés s'en sortent.",
+    "powers": [
+      {
+        "label": "Points de vie",
+        "value": "1D6"
+      },
+      {
+        "label": "Points de Mana",
+        "value": "1D6(INT)"
+      },
+      {
+        "label": "Points d'endurance",
+        "value": "1D12(DEX)"
+      }
+    ],
+    "skills": [
+      {
+        "name": "Embuscade Mortelle",
+        "limited": true,
+        "description": "Les Brigands excellent dans les attaques surprises et les embuscades. Leur connaissance des ruelles sombres et des pièges leur permet de prendre leurs ennemis au dépourvu et de leur infliger des dégâts mortels avant même qu'ils aient le temps de réagir. Ils sont les maîtres de la surprise, utilisant la peur et le chaos pour semer la destruction parmi leurs ennemis. (Gagne un bonus de +2 en Discrétion, ainsi qu’un bonus de +2 à ses scores d’attaques PAR SURPRISE.)"
+      }
+    ],
+    "weapons": ["Légère", "Intermédiaire"],
+    "specialisation": ["Dextérité", "Constitution"]
+  },
+  {
+    "name": "Rôdeur",
+    "image": "/images/classes/classe-rodeur.png",
+    "description": "Les Rôdeurs sont des gardiens des frontières et des sentinelles des territoires sauvages. Leur connaissance de la nature et leur habileté au combat en font des compagnons précieux pour ceux qui voyagent en des terres dangereuses. Leur lien avec les animaux leur permet de communiquer avec eux et de les appeler à l'aide quand ils en ont besoin.",
+    "powers": [
+      {
+        "label": "Points de vie",
+        "value": "1D8"
+      },
+      {
+        "label": "Points de Mana",
+        "value": "1D6(Int)"
+      },
+      {
+        "label": "Points d'endurance",
+        "value": "1D10(Dex)"
+      }
+    ],
+    "skills": [
+      {
+        "name": "Analyse des Faiblesses",
+        "limited": true,
+        "description": "Les Rôdeurs sont des pisteurs hors pair, capables de détecter la moindre trace laissée par leurs proies. Ils sont également doués pour repérer les faiblesses de leurs ennemis et les exploiter à leur avantage, en infligeant des dégâts critiques à leurs cibles vulnérables. (Marque un adversaire ou une cible, ce qui augmente les dégâts reçus par celle-ci de x2, et gagne un bonus de +2 en init)"
+      }
+    ],
+    "weapons": ["Légère", "Intermédiaire"],
+    "specialisation": ["Dextérité", "Sagesse"]
+  },
+  {
+    "name": "Moine",
+    "image": "/images/classes/classe-moine.png",
+    "description": "Les Moines sont des combattants spirituels, dévoués à l'art du combat sans armes et à la méditation. Leur entraînement rigoureux leur confère une force intérieure et une agilité extraordinaires.",
+    "powers": [
+      {
+        "label": "Points de vie",
+        "value": "1D8"
+      },
+      {
+        "label": "Points de Mana",
+        "value": "1D8(Sag)"
+      },
+      {
+        "label": "Points d'endurance",
+        "value": "1D8(Dex)"
+      }
+    ],
+    "skills": [
+      {
+        "name": "Voie de l'Harmonie",
+        "limited": true,
+        "description": "Les Moines peuvent canaliser leur énergie intérieure pour augmenter leur vitesse et leur défense. En se concentrant sur l'harmonie du corps et de l'esprit, ils peuvent esquiver les attaques ennemies avec une facilité déconcertante et infliger des dégâts supplémentaires lors de leurs attaques. (Gagne un Bonus de +2 en Def/Esquive ainsi qu’une action simple supplémentaire.)"
+      }
+    ],
+    "weapons": ["Légère", "Intermédiaire"],
+    "specialisation": ["Dextérité", "Sagesse", "Constitution"]
+  },
+  {
+    "name": "Druide",
+    "image": "/images/classes/classe-druide.png",
+    "description": "Les Druides sont les gardiens de la nature, protégeant les forêts et les animaux des ravages des hommes. Leur connexion avec les forces élémentaires de la nature leur confèrent un pouvoir magique unique, leur permettant de manipuler le monde qui les entourent pour le bien de tous.",
+    "powers": [
+      {
+        "label": "Points de vie",
+        "value": "1D8"
+      },
+      {
+        "label": "Points de Mana",
+        "value": "1D10(Sag)"
+      },
+      {
+        "label": "Points d'endurance",
+        "value": "1D8(Force)"
+      }
+    ],
+    "skills": [
+      {
+        "name": "Lien Naturel",
+        "limited": true,
+        "description": "Les Druides sont capables de communiquer avec les esprits de la nature et de les invoquer pour les aider en combat. Leur lien avec les éléments leur permet de contrôler la terre, utilisant leur pouvoir pour protéger la nature et ses habitants. Vous touchez une créature consentante. (Jusqu'à la fin du sort soit 5 tours, la peau de la cible prend une texture rugueuse telle l'écorce d'un arbre, ce qui augmente sa def de +2, mais prend un malus de +2 en Dextérité)"
+      }
+    ],
+    "weapons": ["Légère", "Intermédiaire", "Lourde"],
+    "specialisation": ["Sagesse", "Constitution", "Force"]
+  },
+  {
+    "name": "Sorcière",
+    "image": "/images/classes/classe-sorciere.png",
+    "description": "Les Sorcières sont des lanceurs de sorts qui tirent leur pouvoir des forces mystiques de la magie. Leur connexion avec le monde des esprits leur confèrent un pouvoir redoutable, mais souvent incontrôlable.",
+    "powers": [
+      {
+        "label": "Points de vie",
+        "value": "1D6"
+      },
+      {
+        "label": "Points de Mana",
+        "value": "1D12(INT)"
+      },
+      {
+        "label": "Points d'endurance",
+        "value": "1D6(FOR)"
+      }
+    ],
+    "skills": [
+      {
+        "name": "Invocateur des Ténèbres",
+        "limited": true,
+        "description": "Les Sorciers sont capables d'invoquer les forces des ténèbres pour infliger des dégâts à leurs ennemis et les maudire avec des malédictions puissantes. Leur lien avec les morts leur permet de manipuler les âmes des défunts et de les utiliser comme des armes contre leurs adversaires. (Augmente l’atq magique de +2 pendant 5 tours, le lanceur de sort reçoit un bouclier magique, de +1 en Def phy ET Mag a chaque fois qu’il inflige des dégâts, CEPENDANT, celui-ci ne peut plus du tout agir pendant les deux prochains tours.)"
+      }
+    ],
+    "weapons": ["Légère", "Intermédiaire"],
+    "specialisation": ["Intelligence", "Charisme", "Constitution"]
+  },
+  {
+    "name": "Paladin",
+    "image": "/images/classes/classe-paladin.png",
+    "description": "Les Paladins sont des champions de la foi, combattant au nom de la justice et de la lumière. Leur dévotion inébranlable et leur pouvoir divin font d'eux des protecteurs redoutables des opprimés et des faibles.",
+    "powers": [
+      {
+        "label": "Points de vie",
+        "value": "1D10"
+      },
+      {
+        "label": "Points de Mana",
+        "value": "1D8(SAG)"
+      },
+      {
+        "label": "Points d'endurance",
+        "value": "1D8(FOR)"
+      }
+    ],
+    "skills": [
+      {
+        "name": "Bénédiction Sacrée",
+        "limited": true,
+        "description": "Les Paladins peuvent canaliser la lumière divine pour bénir leurs alliés et infliger des dégâts aux forces du mal. Ils peuvent guérir les blessures de leurs compagnons et repousser les créatures des ténèbres avec leur foi inébranlable. (Lance une bénédiction qui soigne la moitié des PDV du personnage, au tour prochain, la bénédiction se lance de nouveau et soigne le personnage ainsi que les joueurs autours de lui de +3)"
+      }
+    ],
+    "weapons": ["Légère", "Intermédiaire", "Lourde"],
+    "specialisation": ["Charisme", "Constitution", "Sagesse"]
+  },
+  {
+    "name": "Barde",
+    "image": "/images/classes/classe-barde.png",
+    "description": "Les Bardes sont des artistes itinérants et des conteurs d'histoires, utilisant leur musique et leur charisme pour inspirer leurs alliés et démoraliser leurs ennemis. Leur savoir-faire magique leur permet de manipuler les émotions et les esprits, en faisant des diplomates habiles et des combattants redoutables. Les Bardes peuvent captiver leur auditoire avec leur musique enchanteresse, les plongeant dans un état de transe ou les inspirant à des actes de courage.",
+    "powers": [
+      {
+        "label": "Points de vie",
+        "value": "1D6"
+      },
+      {
+        "label": "Points de Mana",
+        "value": "1D8(CHA)"
+      },
+      {
+        "label": "Points d'endurance",
+        "value": "1D8(DEX)"
+      }
+    ],
+    "skills": [
+      {
+        "name": "Symphonie Envoûtante / Symphonie Harmonieuse",
+        "limited": true,
+        "description": "Leur charisme et leur talent artistique leur permettent de manipuler les émotions et les pensées des autres, les rendant vulnérables à leur influence."
+      },
+      {
+        "name": "Symphonie Envoûtante",
+        "limited": true,
+        "description": "AOE rayon 10, plonge l’auditoire adverse dans un mutisme sur une durée de 1D5 tours empêchant notamment le lancement de sort)."
+      },
+      {
+        "name": "Symphonie Harmonieuse",
+        "limited": true,
+        "description": "AOE rayon 10, inspire les alliés et augmente le jet de dégât de +1 pendant une durée de 1D5 tours)."
+      }
+    ],
+    "weapons": ["Légère"],
+    "specialisation": ["Charisme", "Dextérité "]
+  },
+  {
+    "name": "Maître",
+    "image": "/images/classes/classe-maitre.png",
+    "description": "Les Maîtres sont des mages qui maîtrisent les éléments primordiaux pour invoquer la puissance destructrice des tempêtes, des flammes et des marées. Leur pouvoir est incontrôlable, mais ceux qui peuvent le maîtriser deviennent des maîtres des arcanes élémentaires.",
+    "powers": [
+      {
+        "label": "Points de vie",
+        "value": "1D6"
+      },
+      {
+        "label": "Points de Mana",
+        "value": "1D12(INT)"
+      },
+      {
+        "label": "Points d'endurance",
+        "value": "1D6(FOR)"
+      }
+    ],
+    "skills": [
+      {
+        "name": "Rage Élémentaire",
+        "limited": true,
+        "description": "Les Maîtres peuvent invoquer les éléments de la nature pour déchaîner des tempêtes de feu, des raz-de-marée et des séismes dévastateurs. Leur pouvoir destructeur est redoutable, mais il faut une grande maîtrise de soi pour ne pas succomber à la colère des éléments. (Aoe de rayon 10, (liée à l'élément du personnage.) inflige 1d6 de DM et ne consomme aucun pdm, cependant, le joueur doit réussir un test de sauvegarde de Constitution diff 10, en cas d’échec, celui-ci est down pendant deux tours.)"
+      }
+    ],
+    "weapons": ["Légère", "Intermédiaire"],
+    "specialisation": ["Intelligence", "Constitution"]
+  },
+  {
+    "name": "Profanateur",
+    "image": "/images/classes/classe-profanateur.png",
+    "description": "Les Profanes sont des praticiens des arts sombres, utilisant la magie noire pour invoquer des démons et manipuler les esprits des morts. Leur pouvoir est terrifiant et corrompu, mais ceux qui peuvent le contrôler deviennent des maîtres de l'ombre.",
+    "powers": [
+      {
+        "label": "Points de vie",
+        "value": "1D6"
+      },
+      {
+        "label": "Points de Mana",
+        "value": "1D12(INT)"
+      },
+      {
+        "label": "Points d'endurance",
+        "value": "1D6(FOR)"
+      }
+    ],
+    "skills": [
+      {
+        "name": "Destruction",
+        "limited": true,
+        "description": "(Aoe de rayon 10, (liée à la sous-classe du personnage.) dépose une malédiction (LA MALÉDICTION DÉPENDRA DE LA SOUS-CLASSE QUE VOUS PRENEZ.) et ne consomme aucun pdm, cependant, le joueur doit réussir un test de sauvegarde de Sagesse diff 10, en cas d’échec, celui-ci est down pendant deux tours.)"
+      }
+    ],
+    "weapons": ["Légère", "Intermédiaire"],
+    "specialisation": ["Intelligence", "Constitution"]
+  },
+  {
+    "name": "Orateur",
+    "image": "/images/classes/classe-orateur.png",
+    "description": "Les Orateurs sont des manipulateurs habiles, capables de convaincre et de séduire les autres avec leur charisme et leur éloquence. Leur pouvoir réside dans leur capacité à influencer les autres et à les amener à agir selon leur volonté. Les Orateurs sont des maîtres de la persuasion, capables de convaincre les autres de faire leur volonté avec des mots seuls.",
+    "powers": [
+      {
+        "label": "Points de vie",
+        "value": ""
+      },
+      {
+        "label": "Points de Mana",
+        "value": ""
+      },
+      {
+        "label": "Points d'endurance",
+        "value": ""
+      }
+    ],
+    "skills": [
+      {
+        "name": "Rhétorique Persuasive",
+        "limited": true,
+        "description": "Leur charisme et leur éloquence leur permettent de manipuler les émotions et les opinions des autres, les rendant vulnérables à leur influence. (Ciblage de 5 adversaire maximum en cas de réussite normale les cibles seront “Charmée” et n'attaquent pas le personnage et ses alliés pendant une durée de 1D5 tours. En cas de réussite critique, le personnage peut contrôler les cibles charmées pendant 1D5 tours. En cas d’échec critique le personnage est charmé pendant 1D5 tours.)"
+      }
+    ],
+    "weapons": ["Légère", "Intermédiaire"],
+    "specialisation": ["Charisme", "Intelligence", "Dextérité"]
+  },
+  {
+    "name": "Oracle",
+    "image": "/images/classes/classe-oracle.png",
+    "description": "Les Oracles sont capables de communiquer avec les dieux. Leur don divin leur confère une sagesse mystique et un pouvoir prophétique, mais il vient également avec son lot de fardeaux et de responsabilités. L'Oracle, en tant que maître des mystères et interprète des signes divins, a la capacité exceptionnelle de maîtriser diverses énergies divines en fonction de la divinité à laquelle il est dédié.",
+    "powers": [
+      {
+        "label": "Points de vie",
+        "value": "1D8"
+      },
+      {
+        "label": "Points de Mana",
+        "value": "1D12(SAG)"
+      },
+      {
+        "label": "Points d'endurance",
+        "value": "1D8(FOR ou DEX)"
+      }
+    ],
+    "skills": [
+      {
+        "name": "Appel Divin",
+        "limited": true,
+        "description": "Les Oracles peuvent invoquer un gardien affilié à sa divinité. (Invoque le gardien pendant 1D5 tours possédant des stats. A la fin de l’invocation l’Oracle est down pendant 3 tours). Stat Gardien : Points de Vie = 1D10 Points de Mana = 1D10 Points d’Endurance = 1D10"
+      }
+    ],
+    "weapons": ["Légère", "Intermédiaire", "Lourde"],
+    "specialisation": ["Sagesse", "Charisme", "Force"]
+  },
+  {
+    "name": "Runiste",
+    "image": "/images/classes/classe-runiste.jpg",
+    "description": "Les Runistes sont des maîtres des runes anciennes, capables de canaliser leur pouvoir pour invoquer des sorts et des enchantements puissants. Leur connexion avec les forces primordiales de la magie leur confère une grande sagesse et une compréhension profonde des mystères de l'univers.",
+    "powers": [
+      {
+        "label": "Points de vie",
+        "value": "1D10"
+      },
+      {
+        "label": "Points de Mana",
+        "value": "1D8(INT)"
+      },
+      {
+        "label": "Points d'endurance",
+        "value": "1D10(DEX)"
+      }
+    ],
+    "skills": [
+      {
+        "name": "Puissance Tellurique",
+        "limited": true,
+        "description": "Les Runistes peuvent siphonner la puissance tellurique alentour pour s’en approprier le pouvoir. (Bonus +2 Déf durée 5 tours + Récupération de point de mana 1D4)"
+      }
+    ],
+    "weapons": ["Légère", "Intermédiaire", "Lourde"],
+    "specialisation": ["Toutes"]
+  }
+]
