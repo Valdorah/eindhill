@@ -14,13 +14,5 @@
     "content": "La classe représente le rôle principal ou la spécialisation de votre personnage dans le jeu. Les classes déterminent souvent les compétences, les capacités et les styles de jeu disponibles pour votre personnage.",
     "textLink": "Etape 3",
     "url": "/personnages/classes"
-  },
-  {
-    "code": "SYSTEME",
-    "image": "/images/systeme.jpg",
-    "title": "Système",
-    "content": "Le système fait référence aux règles et mécanismes spécifiques utilisés dans le jeu de rôle. Il définit comment les personnages sont créés, comment les actions sont résolues et comment l'histoire progresse.",
-    "textLink": "Etape 4",
-    "url": null
   }
 ]
