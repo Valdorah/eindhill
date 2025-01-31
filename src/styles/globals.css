@@ -92,11 +92,19 @@
     @apply text-primary;
   }
 
-  .main-page {
-    @apply relative after:content-[''] after:absolute after:left-0 after:top-0 after:h-full after:w-full after:bg-[url('/images/eindhill_logo.png')] after:bg-no-repeat after:bg-cover after:opacity-30;
-  }
+  #homepage {
+    @apply relative;
 
-  .main-page::after {
-    background-position: calc(100% + 200px);
+    video {
+      @apply h-screen lg:h-[700px] w-screen object-cover;
+    }
+
+    > div {
+      @apply bg-black/50 absolute top-0 h-full w-full flex flex-col justify-center items-center px-4;
+
+      > div {
+        @apply max-w-6xl;
+      }
+    }
   }
 }
