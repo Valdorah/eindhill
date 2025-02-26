@@ -1,12 +1,15 @@
 ---
 import BaseLayout from "@/layout/baseLayout.astro";
+import { Button } from "@/components/ui/button.tsx";
+
+import '@/styles/homepage.css';
 
 const pageTitle: string = "bienvenue dans l'univers d'Eindhill !";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
 	<section>
-		<div id="homepage">
+		<div class="homepage">
 			<video autoplay loop muted>
 				<source src="/videos/clouds.mp4"/>
 			</video>
@@ -14,8 +17,8 @@ const pageTitle: string = "bienvenue dans l'univers d'Eindhill !";
 				<div>
 					<h1>{pageTitle}</h1>
 
-					<div class="text-justify lg:text-center">
-						<p>
+					<div class="text-justify lg:text-center lg:text-xl">
+						<p class="mb-6">
 							Eindhill est un univers d'héroïc fantasy où la Lumière et le
 							Chaos se livrent une bataille sans fin. Ce monde, façonné
 							par des forces divines et anciennes, se situe au cœur de
@@ -24,13 +27,23 @@ const pageTitle: string = "bienvenue dans l'univers d'Eindhill !";
 							récits de bravoure et de mystères.
 						</p>
 
-						<p class="mt-3">
-							Rejoignez notre <a
-								class="underline decoration-2"
+						<div class="social-links">
+							<a
 								href="https://discord.gg/ME3Hbfty"
-								target="_blank">Discord</a
-							> pour en savoir plus !
-						</p>
+							>
+								<Button size="lg" className="text-secondary">
+									<i class="fa-brands fa-discord mr-3 text-2xl"></i> Nous rejoindre
+								</Button>
+							</a>
+
+							<a
+								href="https://discord.gg/ME3Hbfty"
+							>
+								<Button size="lg" className="text-secondary">
+									<i class="fa-brands fa-instagram mr-3 text-2xl"></i> Nous suivre
+								</Button>
+							</a>
+						</div>
 					</div>
 				</div>
 			</div>

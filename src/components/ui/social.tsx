@@ -10,7 +10,7 @@ export const Social = ({ link, socialNetworkName }: SocialModel) => {
         <a
             href={link}
             target="_blank"
-            className="text-2xl md:text-4xl"
+            className="text-2xl md:text-3xl"
         >
             <i className={icon}></i>
         </a>

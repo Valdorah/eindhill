@@ -91,20 +91,4 @@
   strong {
     @apply text-primary;
   }
-
-  #homepage {
-    @apply relative;
-
-    video {
-      @apply h-screen lg:h-[700px] w-screen object-cover;
-    }
-
-    > div {
-      @apply bg-black/50 absolute top-0 h-full w-full flex flex-col justify-center items-center px-4;
-
-      > div {
-        @apply max-w-6xl;
-      }
-    }
-  }
 }
