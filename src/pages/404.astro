@@ -1,0 +1,23 @@
+---
+import BaseLayout from "@/layout/baseLayout.astro";
+import { Button } from "@/components/ui/button.tsx";
+
+const pageTitle: string = "Vous êtes perdu ?";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <section class="bg-[url(/images/personnages/vlad_drusvar.png)] bg-center h-full">
+        <div class="h-full w-full bg-black/50 h-full flex flex-col justify-center items-center gap-6">
+            <p class="text-2xl">Vous êtes...</p>
+            <p class="text-primary text-7xl">Perdu !</p>
+
+            <a
+                    href="/"
+            >
+                <Button size="lg" className="text-secondary">
+                    Revenir à l'accueil
+                </Button>
+            </a>
+        </div>
+    </section>
+</BaseLayout>
