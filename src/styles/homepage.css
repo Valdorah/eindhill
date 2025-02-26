@@ -12,10 +12,14 @@
       @apply max-w-6xl;
 
       .social-links {
-        @apply flex flex-col gap-6 sm:mx-auto sm:max-w-xl sm:flex-row sm:justify-between lg:max-w-lg;
+        @apply flex flex-col gap-12 sm:mx-auto sm:max-w-xl sm:flex-row sm:justify-between lg:max-w-lg;
 
-        button {
+        a {
           @apply w-full;
+
+          button {
+            @apply w-full;
+          }
         }
       }
     }

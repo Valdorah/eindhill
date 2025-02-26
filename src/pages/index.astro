@@ -2,51 +2,46 @@
 import BaseLayout from "@/layout/baseLayout.astro";
 import { Button } from "@/components/ui/button.tsx";
 
-import '@/styles/homepage.css';
+import "@/styles/homepage.css";
 
 const pageTitle: string = "bienvenue dans l'univers d'Eindhill !";
 ---
 
 <BaseLayout pageTitle={pageTitle}>
-	<section>
-		<div class="homepage">
-			<video autoplay loop muted>
-				<source src="/videos/clouds.mp4"/>
-			</video>
-			<div>
-				<div>
-					<h1>{pageTitle}</h1>
+  <section>
+    <div class="homepage">
+      <video autoplay loop muted>
+        <source src="/videos/clouds.mp4" />
+      </video>
+      <div>
+        <div>
+          <h1>{pageTitle}</h1>
 
-					<div class="text-justify lg:text-center lg:text-xl">
-						<p class="mb-6">
-							Eindhill est un univers d'héroïc fantasy où la Lumière et le
-							Chaos se livrent une bataille sans fin. Ce monde, façonné
-							par des forces divines et anciennes, se situe au cœur de
-							l'Éternité, le tissu même du cosmos et de la Création.
-							L'histoire et les légendes de ce monde sont tissées de
-							récits de bravoure et de mystères.
-						</p>
+          <div class="text-justify lg:text-center lg:text-xl">
+            <p class="mb-6">
+              Eindhill est un univers d'héroïc fantasy où la Lumière et le Chaos
+              se livrent une bataille sans fin. Ce monde, façonné par des forces
+              divines et anciennes, se situe au cœur de l'Éternité, le tissu
+              même du cosmos et de la Création. L'histoire et les légendes de ce
+              monde sont tissées de récits de bravoure et de mystères.
+            </p>
 
-						<div class="social-links">
-							<a
-								href="https://discord.gg/ME3Hbfty"
-							>
-								<Button size="lg" className="text-secondary">
-									<i class="fa-brands fa-discord mr-3 text-2xl"></i> Nous rejoindre
-								</Button>
-							</a>
+            <div class="social-links">
+              <a href="https://discord.gg/ME3Hbfty">
+                <Button size="lg" className="text-secondary">
+                  <i class="fa-brands fa-discord mr-3 text-2xl"></i> Nous rejoindre
+                </Button>
+              </a>
 
-							<a
-								href="https://discord.gg/ME3Hbfty"
-							>
-								<Button size="lg" className="text-secondary">
-									<i class="fa-brands fa-instagram mr-3 text-2xl"></i> Nous suivre
-								</Button>
-							</a>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
+              <a href="https://discord.gg/ME3Hbfty">
+                <Button size="lg" className="text-secondary">
+                  <i class="fa-brands fa-instagram mr-3 text-2xl"></i> Nous suivre
+                </Button>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 </BaseLayout>

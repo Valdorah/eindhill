@@ -1,46 +1,46 @@
 ---
-import '@/styles/globals.css'
-import { Navigation } from "../components/ui/navigation"
-import { Footer } from '@/components/ui/footer'
+import "@/styles/globals.css";
+import { Navigation } from "../components/ui/navigation";
+import { Footer } from "@/components/ui/footer";
 
 const { pageTitle } = Astro.props;
 
 const pages = [
-    {
-        id: 1,
-        title: "accueil",
-        href: "/"
-    },
-    {
-        id: 2,
-        title: "création de personnages",
-        href: "/personnages"
-    }
-]
+  {
+    id: 1,
+    title: "accueil",
+    href: "/",
+  },
+  {
+    id: 2,
+    title: "création de personnages",
+    href: "/personnages",
+  },
+];
 ---
 
 <html class="h-full" lang="fr">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link href="/assets/fontawesome/css/fontawesome.min.css" rel="stylesheet" />
-        <link href="/assets/fontawesome/css/brands.min.css" rel="stylesheet" />
-        <link href="/assets/fontawesome/css/solid.min.css" rel="stylesheet" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="generator" content={Astro.generator} />
-        <title>Eindhill - {pageTitle}</title>
-    </head>
-    <body class="h-full flex flex-col bg-accent">
-        <header>
-            <Navigation pages={pages} />
-        </header>
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link href="/assets/fontawesome/css/fontawesome.min.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/brands.min.css" rel="stylesheet" />
+    <link href="/assets/fontawesome/css/solid.min.css" rel="stylesheet" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Eindhill - {pageTitle}</title>
+  </head>
+  <body class="flex h-full flex-col bg-accent">
+    <header>
+      <Navigation pages={pages} />
+    </header>
 
-        <article class="flex-1 text-white">
-            <slot />
-        </article>
+    <article class="flex-1 text-white">
+      <slot />
+    </article>
 
-        <footer>
-            <Footer />
-        </footer>
-    </body>
+    <footer>
+      <Footer />
+    </footer>
+  </body>
 </html>

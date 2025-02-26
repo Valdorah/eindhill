@@ -1,19 +1,19 @@
 ---
-import BaseLayout from '@/layout/baseLayout.astro'
-import SideImageTextLayout from '@/layout/sideImageTextLayout.astro'
-import {SimpleCard} from "../../components/ui/simple-card"
-import { LinkCard } from "@/components/ui/link-card"
-import Card from "@/models/Card"
-import type Race from '@/models/Race'
-import Armor from '@/enums/Armor'
+import BaseLayout from "@/layout/baseLayout.astro";
+import SideImageTextLayout from "@/layout/sideImageTextLayout.astro";
+import { SimpleCard } from "../../components/ui/simple-card";
+import { LinkCard } from "@/components/ui/link-card";
+import Card from "@/models/Card";
+import type Race from "@/models/Race";
+import Armor from "@/enums/Armor";
 
-import steps from '@/database/step.json'
-import prototypes from '@/database/prototype.json'
+import steps from "@/database/step.json";
+import prototypes from "@/database/prototype.json";
 
-const pageTitle: string = 'Création du héros'
+const pageTitle: string = "Création du héros";
 
 const formatInfoRace = (race: Race, key: number) => {
-    return `<SideImageTextLayout image={race.image} title={race.name} reverse={key % 2 !== 0}>
+  return `<SideImageTextLayout image={race.image} title={race.name} reverse={key % 2 !== 0}>
     <p>{race.description}</p>
 
     <h3>Compétence raciale</h3>
@@ -37,61 +37,67 @@ const formatInfoRace = (race: Race, key: number) => {
     <Fragment set:html={race.additionalInfo} />
     </div>
     }
-    </SideImageTextLayout>`
-}
+    </SideImageTextLayout>`;
+};
 
 const mortalRaces: Race[] = [
-    {
-        name: 'Humain',
-        description: 'Les humains, véritables acteurs de la scène d\'Eindhill, sont présents dans toutes les strates de la société. '+
-            'Leurs royaumes florissants abritent des cultures distinctes, des cités marchandes aux bastions royaux. Dotés de compétences polyvalentes, '+
-            'les humains excellent dans une gamme étendue de professions, des arts magiques aux métiers artisanaux. ',
-        image: '/images/races/race-humain.jpg',
-        racialSkills: [
-            {
-                name: 'Instinct de Survie',
-                description: 'Si un coup doit vous conduire à 0 PV, une fois par combat, '+
-                    'vous utilisez votre compétence raciale automatiquement, divisant ainsi les dégâts subis de l\'attaque par 2 ! '+
-                    '(1 pt de dégât obligatoire). +4 pts de Compétence.',
-                image: null
-            }
-        ],
-        armorType: [Armor.LIGHT, Armor.INTERMEDIATE, Armor.HEAVY]
-    },
-    {
-        name: 'Titanien',
-        description: 'Semi-géants par nature, ils incarnent la grandeur et la puissance dans ce monde fantastique. Leurs terres sont le '+
-            'foyer de sociétés robustes, où la force physique et la sagesse sont vénérées de manière égale. Des bastions imposants émergent au '+
-            'sein de vastes contrées, révélant une richesse culturelle distincte.',
-        image: '/images/races/race-titanien.jpg',
-        racialSkills: [
-            {
-                name: 'Peuple des Géants',
-                description: 'Augmente le jet d\'Athlétisme et d\'Intimidation de +2, il gagne [+2 Con ] , '+
-                'Cependant, sa vitesse de déplacement est réduite. [-2 Dex]. '+
-                'Son total de point de vie augmente de +3',
-                image: null
-            }
-        ],
-        armorType: [Armor.LIGHT, Armor.INTERMEDIATE, Armor.HEAVY]
-    },
-    {
-        name: 'Unathopien',
-        description: 'Doté d\'une polyvalence dans les compétences, il s\'adapte aisément à l\'évolution rapide de la société d\'Unathopia, '+
-            'participant activement à la prospérité de cette métropole. En tant que fervent partisan de Thédès, le Premier Né du Temps, '+
-            'il honore les principes de progrès et de perfection, cherchant à transcender les limites technologiques avec un dévouement absolu '+
-            'envers l\'avancement de sa cité.',
-        image: '/images/races/race-unathopien.jpg',
-        racialSkills: [
-            {
-                name: 'Ingéniosité de l\'Engrenage - Seuil 0',
-                description: 'Bonus de +2 en Escamotage et Investigation, démontrant un sens aigu de la perception et de la déduction liées à '+
-                    'l\'ingénierie. DM multipliés par deux contre les dégâts de foudre.',
-                image: null
-            }
-        ],
-        armorType: [Armor.LIGHT, Armor.INTERMEDIATE],
-        additionalInfo: `
+  {
+    name: "Humain",
+    description:
+      "Les humains, véritables acteurs de la scène d'Eindhill, sont présents dans toutes les strates de la société. " +
+      "Leurs royaumes florissants abritent des cultures distinctes, des cités marchandes aux bastions royaux. Dotés de compétences polyvalentes, " +
+      "les humains excellent dans une gamme étendue de professions, des arts magiques aux métiers artisanaux. ",
+    image: "/images/races/race-humain.jpg",
+    racialSkills: [
+      {
+        name: "Instinct de Survie",
+        description:
+          "Si un coup doit vous conduire à 0 PV, une fois par combat, " +
+          "vous utilisez votre compétence raciale automatiquement, divisant ainsi les dégâts subis de l'attaque par 2 ! " +
+          "(1 pt de dégât obligatoire). +4 pts de Compétence.",
+        image: null,
+      },
+    ],
+    armorType: [Armor.LIGHT, Armor.INTERMEDIATE, Armor.HEAVY],
+  },
+  {
+    name: "Titanien",
+    description:
+      "Semi-géants par nature, ils incarnent la grandeur et la puissance dans ce monde fantastique. Leurs terres sont le " +
+      "foyer de sociétés robustes, où la force physique et la sagesse sont vénérées de manière égale. Des bastions imposants émergent au " +
+      "sein de vastes contrées, révélant une richesse culturelle distincte.",
+    image: "/images/races/race-titanien.jpg",
+    racialSkills: [
+      {
+        name: "Peuple des Géants",
+        description:
+          "Augmente le jet d'Athlétisme et d'Intimidation de +2, il gagne [+2 Con ] , " +
+          "Cependant, sa vitesse de déplacement est réduite. [-2 Dex]. " +
+          "Son total de point de vie augmente de +3",
+        image: null,
+      },
+    ],
+    armorType: [Armor.LIGHT, Armor.INTERMEDIATE, Armor.HEAVY],
+  },
+  {
+    name: "Unathopien",
+    description:
+      "Doté d'une polyvalence dans les compétences, il s'adapte aisément à l'évolution rapide de la société d'Unathopia, " +
+      "participant activement à la prospérité de cette métropole. En tant que fervent partisan de Thédès, le Premier Né du Temps, " +
+      "il honore les principes de progrès et de perfection, cherchant à transcender les limites technologiques avec un dévouement absolu " +
+      "envers l'avancement de sa cité.",
+    image: "/images/races/race-unathopien.jpg",
+    racialSkills: [
+      {
+        name: "Ingéniosité de l'Engrenage - Seuil 0",
+        description:
+          "Bonus de +2 en Escamotage et Investigation, démontrant un sens aigu de la perception et de la déduction liées à " +
+          "l'ingénierie. DM multipliés par deux contre les dégâts de foudre.",
+        image: null,
+      },
+    ],
+    armorType: [Armor.LIGHT, Armor.INTERMEDIATE],
+    additionalInfo: `
             <p>
                 [Ingéniosité de l'Engrenage]  qu’on nommera : [IdE] est une caractéristique unique qui représente le degré de mécanisation du
                 corps du personnage Unathopien.
@@ -108,28 +114,30 @@ const mortalRaces: Race[] = [
                 <li><span class="font-bold">Seuil 4 :</span> 70% = [IdE] +4 en ATK [Phy, Mag ou Dis] / -4 ATK [Phy, Mag ou Dis]</li>
                 <li><span class="font-bold">Seuil 5 :</span> 100% = [IdE] +5 en ATK [Phy, Mag ou Dis] / -5 ATK [Phy, Mag ou Dis]</li>
             </ul>
-        `
-    }
+        `,
+  },
 ];
 
 const elderRaces: Race[] = [
-    {
-        name: 'Ein',
-        description: 'Les Eins, habitants des îles scindées de Pantropeira, sont les premiers êtres à avoir peuplé Eindhill ' +
-            'autrefois. Leur essence noble et éthérée équivaut à l\'élégance des elfes dans d\'autres récits fantastiques, ' +
-            'mais ici, ils portent le nom distinctif de "Eins".',
-        image: '/images/races/race-ein.jpg',
-        racialSkills: [
-            {
-                name: 'Lumière du Fondateur',
-                description: 'Un Ein est insensible aux dégâts de Lumière, il possède un bonus de +2 via sa Caste, ' +
-                    'représentant ses connaissances. Cependant, les dégâts de type Chaos sont doublés ! Son total de mana ' +
-                    'augmente de +3',
-                image: null
-            }
-        ],
-        armorType: [Armor.LIGHT, Armor.INTERMEDIATE, Armor.HEAVY],
-        additionalInfo: `
+  {
+    name: "Ein",
+    description:
+      "Les Eins, habitants des îles scindées de Pantropeira, sont les premiers êtres à avoir peuplé Eindhill " +
+      "autrefois. Leur essence noble et éthérée équivaut à l'élégance des elfes dans d'autres récits fantastiques, " +
+      'mais ici, ils portent le nom distinctif de "Eins".',
+    image: "/images/races/race-ein.jpg",
+    racialSkills: [
+      {
+        name: "Lumière du Fondateur",
+        description:
+          "Un Ein est insensible aux dégâts de Lumière, il possède un bonus de +2 via sa Caste, " +
+          "représentant ses connaissances. Cependant, les dégâts de type Chaos sont doublés ! Son total de mana " +
+          "augmente de +3",
+        image: null,
+      },
+    ],
+    armorType: [Armor.LIGHT, Armor.INTERMEDIATE, Armor.HEAVY],
+    additionalInfo: `
             <p>
                 Les Eins sont divisées en plusieurs castes,  chacune  étant associée à un astre particulier ou alors une
                 divinité tutélaire.
@@ -188,25 +196,27 @@ const elderRaces: Race[] = [
                 navigateurs et protecteurs des fonds marins. Vivant depuis la cité du Cœur, ils honorent Yndraosa.
             </p>
             <p>Bonus accordé  : Offre un bonus de +2 en Survie et Athlétisme  + Respiration Aquatique.</p>
-        `
-    },
-    {
-        name: 'Lyein',
-        description: 'Les Lyeins (Les Eins Noirs), sont des êtres énigmatiques et mystérieux, évoluant dans les ombres ' +
-            'et les recoins obscurs des Limbes, Les Elfes Noirs, habitants des terres ténébreuses et complexes, se ' +
-            'répartissent en quatre factions, chacune dédiée à une entité sombre et puissante.',
-        image: '/images/races/race-lyein.jpg',
-        racialSkills: [
-            {
-                name: 'Lignée Chaotique',
-                description: 'Un Ein de la Lignée Chaotique est insensible aux dégâts de Chaos, il possède un bonus de ' +
-                    '+2 via sa Caste, représentant ses connaissances. Cependant, les dégâts de type Lumière sont ' +
-                    'doublés ! Son total d’endurance augmente de +3',
-                image: null
-            }
-        ],
-        armorType: [Armor.LIGHT, Armor.INTERMEDIATE, Armor.HEAVY],
-        additionalInfo: `            
+        `,
+  },
+  {
+    name: "Lyein",
+    description:
+      "Les Lyeins (Les Eins Noirs), sont des êtres énigmatiques et mystérieux, évoluant dans les ombres " +
+      "et les recoins obscurs des Limbes, Les Elfes Noirs, habitants des terres ténébreuses et complexes, se " +
+      "répartissent en quatre factions, chacune dédiée à une entité sombre et puissante.",
+    image: "/images/races/race-lyein.jpg",
+    racialSkills: [
+      {
+        name: "Lignée Chaotique",
+        description:
+          "Un Ein de la Lignée Chaotique est insensible aux dégâts de Chaos, il possède un bonus de " +
+          "+2 via sa Caste, représentant ses connaissances. Cependant, les dégâts de type Lumière sont " +
+          "doublés ! Son total d’endurance augmente de +3",
+        image: null,
+      },
+    ],
+    armorType: [Armor.LIGHT, Armor.INTERMEDIATE, Armor.HEAVY],
+    additionalInfo: `            
             <h4 class="text-primary">Eternien</h4>
             <p>
                 Les Eterniens, fervents partisans de la Reine Araignée Eternia, sont maîtres dans les arts de l'intrigue 
@@ -233,26 +243,28 @@ const elderRaces: Race[] = [
                 pour des desseins mystérieux et sombres, faisant d'eux des acteurs intrigants dans les jeux du destin. 
             </p>
             <p>Bonus accordé  : Offre un bonus de +2 en Discrétion et Intuition , ne porte pas d’armures lourdes.</p>
-        `
-    },
-    {
-        name: 'Nain',
-        description: 'Les Nains sont généralement caractérisés par leur petite taille, leur robustesse physique, leur ' +
-            'talent pour l\'artisanat et leur amour pour les richesses souterraines. Originaires des montagnes, les ' +
-            'nains sont réputés pour leur maîtrise de la forge, leur habileté à travailler les métaux et leur ingéniosité ' +
-            'dans la construction d\'ouvrages souterrains complexes.',
-        image: '/images/races/race-nain.jpg',
-        racialSkills: [
-            {
-                name: 'Né de la Montagne',
-                description: 'Les individus nés de la Montagne sont compétents dans l\'utilisation de toutes les armes,' +
-                    'quelle que soit leur classe ou leur spécialisation. Il gagne un bonus selon son clan de provenance' +
-                    'et un bonus de +2 à son score d\'attaque. (Physique, À Distance ou Magique.)',
-                image: null
-            }
-        ],
-        armorType: [Armor.LIGHT, Armor.INTERMEDIATE, Armor.HEAVY],
-        additionalInfo: `            
+        `,
+  },
+  {
+    name: "Nain",
+    description:
+      "Les Nains sont généralement caractérisés par leur petite taille, leur robustesse physique, leur " +
+      "talent pour l'artisanat et leur amour pour les richesses souterraines. Originaires des montagnes, les " +
+      "nains sont réputés pour leur maîtrise de la forge, leur habileté à travailler les métaux et leur ingéniosité " +
+      "dans la construction d'ouvrages souterrains complexes.",
+    image: "/images/races/race-nain.jpg",
+    racialSkills: [
+      {
+        name: "Né de la Montagne",
+        description:
+          "Les individus nés de la Montagne sont compétents dans l'utilisation de toutes les armes," +
+          "quelle que soit leur classe ou leur spécialisation. Il gagne un bonus selon son clan de provenance" +
+          "et un bonus de +2 à son score d'attaque. (Physique, À Distance ou Magique.)",
+        image: null,
+      },
+    ],
+    armorType: [Armor.LIGHT, Armor.INTERMEDIATE, Armor.HEAVY],
+    additionalInfo: `            
             <h4 class="text-primary">Clan de provenance</h4>
             
             <h4 class="text-primary">Hurle-Dragon</h4>
@@ -287,28 +299,30 @@ const elderRaces: Race[] = [
                 armures renommées. 
             </p>
             <p>Bonus accordé  : Offre un bonus de +2 en Escamotage et Histoire .</p>
-        `
-    }
-]
+        `,
+  },
+];
 
 const hybrideRaces: Race[] = [
-    {
-        name: 'Sylvaloniens',
-        description: 'Les Sylvaloniens sont une race de créatures singulières touchées par la peste verte, une maladie ' +
-            'mystérieuse et dévastatrice qui transforme progressivement leur corps en une forme arbustive ou arborescente. ' +
-            'Jadis semblables à des humains, les Sylvaloniens subissent une métamorphose lente et inexorable, leur peau ' +
-            'prenant une teinte verdâtre, leurs membres s\'ossifiant et se transformant en branches.',
-        image: '/images/races/race-sylvalonien.jpg',
-        racialSkills: [
-            {
-                name: 'Touché par la Peste Verte',
-                description: 'Les individus touchés par la Peste Verte bénéficient d\'une constitution renforcée mais ' +
-                    'leur agilité en est diminuée. Ils sont plus vulnérables aux flammes.',
-                image: null
-            }
-        ],
-        armorType: [Armor.LIGHT, Armor.INTERMEDIATE],
-        additionalInfo: `
+  {
+    name: "Sylvaloniens",
+    description:
+      "Les Sylvaloniens sont une race de créatures singulières touchées par la peste verte, une maladie " +
+      "mystérieuse et dévastatrice qui transforme progressivement leur corps en une forme arbustive ou arborescente. " +
+      "Jadis semblables à des humains, les Sylvaloniens subissent une métamorphose lente et inexorable, leur peau " +
+      "prenant une teinte verdâtre, leurs membres s'ossifiant et se transformant en branches.",
+    image: "/images/races/race-sylvalonien.jpg",
+    racialSkills: [
+      {
+        name: "Touché par la Peste Verte",
+        description:
+          "Les individus touchés par la Peste Verte bénéficient d'une constitution renforcée mais " +
+          "leur agilité en est diminuée. Ils sont plus vulnérables aux flammes.",
+        image: null,
+      },
+    ],
+    armorType: [Armor.LIGHT, Armor.INTERMEDIATE],
+    additionalInfo: `
             <h4 class="text-primary">Touché par la Peste Verte</h4>
             
             <h4 class="text-primary">Bonus de +2 en Constitution</h4>
@@ -339,25 +353,27 @@ const hybrideRaces: Race[] = [
                 Cependant, ils sont particulièrement sensibles aux dégâts de feu, prenant le double de dégâts en cas 
                 d'exposition à des flammes.
             </p>
-        `
-    },
-    {
-        name: 'Demi-Eins',
-        description: 'Les Demi-Ein sont une fusion harmonieuse entre les mystérieux Eins et les polyvalents Humains, ' +
-            'héritant des traits distincts de chacune de ces races. Il existe plusieurs variantes de Demi-Ein, chacune ' +
-            'portant les marques spécifiques de son ascendance.',
-        image: '/images/races/race-demi-ein.jpg',
-        racialSkills: [
-            {
-                name: 'Double Ascendance',
-                description: 'Les individus dotés de la Double Ascendance héritent à la fois de l\'instinct de survie ' +
-                    'des humains et des traits distinctifs des elfes, en fonction de leur lignée elfique spécifique ainsi ' +
-                    'que sa maîtrise d’armure.',
-                image: null
-            }
-        ],
-        armorType: [Armor.LIGHT, Armor.INTERMEDIATE, Armor.HEAVY],
-        additionalInfo: `
+        `,
+  },
+  {
+    name: "Demi-Eins",
+    description:
+      "Les Demi-Ein sont une fusion harmonieuse entre les mystérieux Eins et les polyvalents Humains, " +
+      "héritant des traits distincts de chacune de ces races. Il existe plusieurs variantes de Demi-Ein, chacune " +
+      "portant les marques spécifiques de son ascendance.",
+    image: "/images/races/race-demi-ein.jpg",
+    racialSkills: [
+      {
+        name: "Double Ascendance",
+        description:
+          "Les individus dotés de la Double Ascendance héritent à la fois de l'instinct de survie " +
+          "des humains et des traits distinctifs des elfes, en fonction de leur lignée elfique spécifique ainsi " +
+          "que sa maîtrise d’armure.",
+        image: null,
+      },
+    ],
+    armorType: [Armor.LIGHT, Armor.INTERMEDIATE, Armor.HEAVY],
+    additionalInfo: `
             <h4 class="text-primary">Double ascendance</h4>
             
             <h4 class="text-primary">Instinct de Survie</h4>
@@ -383,97 +399,103 @@ const hybrideRaces: Race[] = [
                     </p>
                 </li>
             </ul>
-        `
-    },
-]
+        `,
+  },
+];
 ---
 
-<BaseLayout
-        pageTitle={pageTitle}
->
-    <section class="container mb-6">
-        <header class="mb-12">
-            <h2>{ pageTitle }</h2>
+<BaseLayout pageTitle={pageTitle}>
+  <section class="container mb-6">
+    <header class="mb-12">
+      <h2>{pageTitle}</h2>
 
-            <h3 class="text-center">Les races</h3>
+      <h3 class="text-center">Les races</h3>
 
-            <p>
-                Chaque race offre une palette unique de caractéristiques, avec des sous-races distinctes ajoutant une
-                profondeur encore plus grande. Plongez dans les nuances des cultures, des traditions et des récits qui
-                définissent chaque groupe, contribuant à une toile complexe et captivante dans l'univers d'Eindhill.
-            </p>
-            <p>
-                <strong>Les Races offrent une compétence.</strong>
-            </p>
-            <p>
-                <strong>Les compétences raciales</strong>, qui permettent de différencier les personnages en fonction de leur nature
-                profonde et de leur appartenance à une race afin de simuler la grande variété des modes de vie.
-            </p>
-        </header>
+      <p>
+        Chaque race offre une palette unique de caractéristiques, avec des
+        sous-races distinctes ajoutant une profondeur encore plus grande.
+        Plongez dans les nuances des cultures, des traditions et des récits qui
+        définissent chaque groupe, contribuant à une toile complexe et
+        captivante dans l'univers d'Eindhill.
+      </p>
+      <p>
+        <strong>Les Races offrent une compétence.</strong>
+      </p>
+      <p>
+        <strong>Les compétences raciales</strong>, qui permettent de
+        différencier les personnages en fonction de leur nature profonde et de
+        leur appartenance à une race afin de simuler la grande variété des modes
+        de vie.
+      </p>
+    </header>
 
-        <div class="mb-12">
-            <div class="grid gap-4 grid-cols-1 lg:grid-cols-3">
-                {
-                    prototypes.map(prototype => (
-                        <SimpleCard
-                            title={prototype.title}
-                            content={prototype.content}
-                            image={prototype.image}
-                        />
-                    ))
-                }
-            </div>
-        </div>
+    <div class="mb-12">
+      <div class="grid grid-cols-1 gap-4 lg:grid-cols-3">
+        {
+          prototypes.map((prototype) => (
+            <SimpleCard
+              title={prototype.title}
+              content={prototype.content}
+              image={prototype.image}
+            />
+          ))
+        }
+      </div>
+    </div>
 
-        <div class="mb-12">
-            <h4 class="text-primary">Races mortelles</h4>
+    <div class="mb-12">
+      <h4 class="text-primary">Races mortelles</h4>
 
-            <div class="flex flex-col gap-10">
-                {
-                    mortalRaces.map((race, key) => <SideImageTextLayout race={race} reverse={key % 2 !== 0} />)
-                }
-            </div>
-        </div>
+      <div class="flex flex-col gap-10">
+        {
+          mortalRaces.map((race, key) => (
+            <SideImageTextLayout race={race} reverse={key % 2 !== 0} />
+          ))
+        }
+      </div>
+    </div>
 
-        <div class="mb-12">
-            <h4 class="text-primary">Races anciennes</h4>
+    <div class="mb-12">
+      <h4 class="text-primary">Races anciennes</h4>
 
-            <div class="flex flex-col gap-10">
-                {
-                    elderRaces.map((race, key) => <SideImageTextLayout race={race} reverse={key % 2 !== 0} />)
-                }
-            </div>
-        </div>
+      <div class="flex flex-col gap-10">
+        {
+          elderRaces.map((race, key) => (
+            <SideImageTextLayout race={race} reverse={key % 2 !== 0} />
+          ))
+        }
+      </div>
+    </div>
 
-        <div class="mb-12">
-            <h4 class="text-primary">Races hybrides</h4>
+    <div class="mb-12">
+      <h4 class="text-primary">Races hybrides</h4>
 
-            <div class="flex flex-col gap-10">
-                {
-                    hybrideRaces.map((race, key) => <SideImageTextLayout race={race} reverse={key % 2 !== 0} />)
-                }
-            </div>
-        </div>
+      <div class="flex flex-col gap-10">
+        {
+          hybrideRaces.map((race, key) => (
+            <SideImageTextLayout race={race} reverse={key % 2 !== 0} />
+          ))
+        }
+      </div>
+    </div>
 
-        <div class="mb-12">
-            <h3>Prochaines étapes !</h3>
-            <div
-                    class="grid gap-4 grid-cols-1 lg:grid-cols-2"
-            >
-                {
-                    steps
-                        .filter(step => step.code === 'CLASSE')
-                        .map(card => (
-                            <LinkCard
-                                image={card.image}
-                                title={card.title}
-                                content={card.content}
-                                textLink={card.textLink}
-                                url={card.url}
-                            />
-                        ))
-                }
-            </div>
-        </div>
-    </section>
+    <div class="mb-12">
+      <h3>Prochaines étapes !</h3>
+      <div class="grid grid-cols-1 gap-4 lg:grid-cols-2">
+        {
+          steps
+            .filter((step) => step.code === "CLASSE")
+            .map((card) => (
+              <LinkCard
+                image={card.image}
+                title={card.title}
+                content={card.content}
+                textLink={card.textLink}
+                url={card.url}
+              />
+            ))
+        }
+      </div>
+    </div>
+  </section>
 </BaseLayout>
