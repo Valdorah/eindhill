@@ -1,9 +1,9 @@
 class NavigationItemModel {
-    constructor(
-        public readonly id: number,
-        public readonly title: string,
-        public readonly href: string
-    ) {}
+  constructor(
+    public readonly id: number,
+    public readonly title: string,
+    public readonly href: string,
+  ) {}
 }
 
-export default NavigationItemModel
+export default NavigationItemModel;

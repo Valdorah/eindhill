@@ -1,36 +1,40 @@
-"use client"
+"use client";
 
-import * as React from "react"
+import * as React from "react";
 
 import {
-    Card as ShadCard,
-    CardContent,
-    CardHeader,
-    CardTitle,
+  Card as ShadCard,
+  CardContent,
+  CardHeader,
+  CardTitle,
 } from "@/components/ui/card";
 import type Card from "@/models/Card.ts";
 
 export function SimpleCard(card: Card) {
-    return (
-        <ShadCard
-            className={`bg-center bg-cover sm:!bg-none`}
-            style={{ backgroundImage: card.image ? `url(${card.image})` : '' }}
-        >
-            <div className='flex'>
-                <div className='hidden sm:flex flex-col justify-center'>
-                    {
-                        card.image ? (<img className='w-20 h-20 rounded-lg ml-6' src={card.image} />) : ''
-                    }
-                </div>
-                <div className='flex-1 flex flex-col justify-between bg-secondary/75 sm:bg-transparent rounded-lg'>
-                    <CardHeader>
-                        <CardTitle className='text-primary text-xl m-0 p-0'>{ card.title }</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                        <p>{ card.content }</p>
-                    </CardContent>
-                </div>
-            </div>
-        </ShadCard>
-    )
+  return (
+    <ShadCard
+      className={`bg-cover bg-center sm:!bg-none`}
+      style={{ backgroundImage: card.image ? `url(${card.image})` : "" }}
+    >
+      <div className="flex">
+        <div className="hidden flex-col justify-center sm:flex">
+          {card.image ? (
+            <img className="ml-6 h-20 w-20 rounded-lg" src={card.image} />
+          ) : (
+            ""
+          )}
+        </div>
+        <div className="flex flex-1 flex-col justify-between rounded-lg bg-secondary/75 sm:bg-transparent">
+          <CardHeader>
+            <CardTitle className="m-0 p-0 text-xl text-primary">
+              {card.title}
+            </CardTitle>
+          </CardHeader>
+          <CardContent>
+            <p>{card.content}</p>
+          </CardContent>
+        </div>
+      </div>
+    </ShadCard>
+  );
 }

@@ -2,17 +2,17 @@
   @apply relative;
 
   video {
-    @apply h-screen lg:h-[700px] w-screen object-cover;
+    @apply h-screen w-screen object-cover lg:h-[700px];
   }
 
   > div {
-    @apply bg-black/50 absolute top-0 h-full w-full flex flex-col justify-center items-center px-4;
+    @apply absolute top-0 flex h-full w-full flex-col items-center justify-center bg-black/50 px-4;
 
     > div {
       @apply max-w-6xl;
 
       .social-links {
-        @apply flex flex-col sm:flex-row sm:justify-between sm:max-w-xl lg:max-w-lg sm:mx-auto gap-6;
+        @apply flex flex-col gap-6 sm:mx-auto sm:max-w-xl sm:flex-row sm:justify-between lg:max-w-lg;
 
         button {
           @apply w-full;

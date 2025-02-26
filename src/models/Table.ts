@@ -1,21 +1,21 @@
 class Table {
-    constructor(
-        public readonly columns: Cell[],
-        public readonly values: Entry[],
-        public readonly caption?: string|null
-    ) {}
+  constructor(
+    public readonly columns: Cell[],
+    public readonly values: Entry[],
+    public readonly caption?: string | null,
+  ) {}
 }
 
 class Cell {
-    constructor(
-        public readonly value: string,
-        public readonly key: string,
-        public readonly className?: string
-    ) {}
+  constructor(
+    public readonly value: string,
+    public readonly key: string,
+    public readonly className?: string,
+  ) {}
 }
 
 class Entry {
-    [key: string]: string;
+  [key: string]: string;
 }
 
-export default Table
+export default Table;

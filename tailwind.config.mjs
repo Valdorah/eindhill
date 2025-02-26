@@ -68,8 +68,8 @@ module.exports = {
       },
     },
     fontFamily: {
-      sans: ['Sen', 'sans-serif']
-    }
+      sans: ["Sen", "sans-serif"],
+    },
   },
   plugins: [require("tailwindcss-animate")],
-}
+};

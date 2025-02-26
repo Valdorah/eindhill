@@ -44,48 +44,53 @@
   }
 
   @font-face {
-    font-family: 'Sen';
+    font-family: "Sen";
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url(/fonts/Sen-VariableFont_wght.ttf) format('truetype');
+    src: url(/fonts/Sen-VariableFont_wght.ttf) format("truetype");
   }
 
   @font-face {
-    font-family: 'BebasNeue';
+    font-family: "BebasNeue";
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url(/fonts/BebasNeue-Regular.ttf) format('truetype');
+    src: url(/fonts/BebasNeue-Regular.ttf) format("truetype");
   }
 
   @font-face {
-    font-family: 'AlegreyaSansSC';
+    font-family: "AlegreyaSansSC";
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: url(/fonts/AlegreyaSansSC/AlegreyaSansSC-Regular.ttf) format('truetype');
+    src: url(/fonts/AlegreyaSansSC/AlegreyaSansSC-Regular.ttf)
+      format("truetype");
   }
 
   h1 {
     font-family: BebasNeue, sans-serif;
-    @apply text-primary mb-4 text-center text-4xl md:text-6xl lg:text-7xl;
+    @apply mb-4 text-center text-4xl text-primary md:text-6xl lg:text-7xl;
   }
 
-  h2, h3, h4, h5, h6 {
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
     font-family: AlegreyaSansSC, sans-serif;
   }
 
   h2 {
-    @apply text-primary my-4 text-4xl;
+    @apply my-4 text-4xl text-primary;
   }
 
   h3 {
-    @apply text-white my-4 text-3xl;
+    @apply my-4 text-3xl text-white;
   }
 
   h4 {
-    @apply text-white my-3 text-2xl;
+    @apply my-3 text-2xl text-white;
   }
 
   strong {

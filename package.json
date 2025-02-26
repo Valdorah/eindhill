@@ -27,5 +27,9 @@
     "tailwindcss": "^3.4.3",
     "tailwindcss-animate": "^1.0.7",
     "typescript": "^5.4.5"
+  },
+  "devDependencies": {
+    "prettier": "3.5.2",
+    "prettier-plugin-tailwindcss": "^0.6.11"
   }
 }
