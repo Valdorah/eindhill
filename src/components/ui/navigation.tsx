@@ -10,6 +10,7 @@ import {
   navigationMenuTriggerStyle,
 } from "@/components/ui/navigation-menu";
 import NavigationItemModel from "@/models/NavigationItemModel.ts";
+import {cn} from "@/lib/utils.ts";
 
 export function Navigation({ pages }: { pages: NavigationItemModel[] }) {
   return (
@@ -20,7 +21,7 @@ export function Navigation({ pages }: { pages: NavigationItemModel[] }) {
             <NavigationMenuItem key={page.id}>
               <NavigationMenuLink
                 href={page.href}
-                className={navigationMenuTriggerStyle()}
+                className={cn(navigationMenuTriggerStyle(), "text-xl")}
               >
                 {page.title}
               </NavigationMenuLink>

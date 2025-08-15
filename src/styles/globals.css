@@ -97,4 +97,8 @@
   strong {
     @apply text-primary;
   }
+
+  input {
+    @apply h-[32px] w-full p-6 rounded-lg text-black;
+  }
 }

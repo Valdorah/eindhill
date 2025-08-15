@@ -1,0 +1,26 @@
+---
+import BaseLayout from "@/layout/baseLayout.astro";
+import { Button } from "@/components/ui/button.tsx";
+
+const pageTitle: string = "Look Object";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <section class="container">
+        <h2>{pageTitle}</h2>
+
+        <form class="flex flex-col gap-2">
+            <input name="link" type="text" placeholder="creature/catslime/catslime.m2" />
+            <input name="result" type="text" readonly placeholder="catslime" />
+            <span id="message" class="hidden">Element copier dans le presse papier !</span>
+
+            <footer class="flex justify-center gap-4">
+                <Button type="reset" className="text-secondary w-[200px]">
+                    Effacer
+                </Button>
+            </footer>
+        </form>
+    </section>
+
+    <script src="../scripts/look-object.js"></script>
+</BaseLayout>
