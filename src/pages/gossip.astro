@@ -1,0 +1,18 @@
+---
+import BaseLayout from "@/layout/baseLayout.astro";
+import { Button } from "@/components/ui/button.tsx";
+
+const pageTitle: string = "Gossip";
+---
+
+<BaseLayout pageTitle={pageTitle}>
+    <section class="container">
+        <h2>{pageTitle}</h2>
+
+        <form class="flex flex-col gap-2">
+            <textarea></textarea>
+        </form>
+    </section>
+
+    <script src="../scripts/gossip.js"></script>
+</BaseLayout>
