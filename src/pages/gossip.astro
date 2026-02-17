@@ -8,14 +8,28 @@ const pageTitle: string = "Gossip";
 <BaseLayout pageTitle={pageTitle}>
     <section class="container">
         <h2>{pageTitle}</h2>
-        <form class="flex flex-col gap-2">
-            <textarea id="gossip" rows="6" name="gossip"></textarea>
-            <Button type="submit" className="text-secondary w-full">
-                Go !
-            </Button>
-        </form>
+        <div class="sm:flex gap-3 mb-3">
+            <form class="flex-[1]">
+                <fieldset class="flex flex-col gap-2">
+                    <legend>Départ</legend>
+                    <input id="title" type="text" name="title" placeholder="Nom de la quête" />
+                    <textarea id="gossip" rows="4" name="gossip" placeholder="Description narée de la quête"></textarea>
+                    <input id="option" type="text" name="option" placeholder="Commencer la quête" value="Commencer la quête" />
+                </fieldset>
 
-        <div id="content" class="mt-5"></div>
+                <fieldset class="flex flex-col gap-2">
+                    <legend>Fin</legend>
+                    <input id="title" type="text" name="title" placeholder="Objectif" />
+                    <textarea id="gossip" rows="4" name="gossip" placeholder="Description narée de la quête"></textarea>
+                    <input id="option" type="text" name="option" placeholder="Description de l’objectif suivant" />
+                </fieldset>
+                <Button type="submit" className="text-secondary w-full mt-2">
+                    Go !
+                </Button>
+            </form>
+
+            <div id="content" class="bg-secondary mt-5 w-full rounded-lg p-2 flex-[2]"></div>
+        </div>
     </section>
 
     <template>

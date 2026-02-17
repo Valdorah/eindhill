@@ -11,9 +11,11 @@ window.onload = () => {
 const handleSubmit = e => {
     e.preventDefault()
     const formData = new FormData(e.target)
+    const entries = formData.entries()
 
-    const result = splitString(formData.get('gossip'), 221)
-    draw(result)
+    const htmlArr= addCommands(entries)
+    const content = document.querySelector('#content')
+    content.innerHTML = htmlArr.join('<br />')
 }
 
 const splitString = (str, length) => {
@@ -39,16 +41,24 @@ const splitString = (str, length) => {
     return arr
 }
 
-const draw = result => {
-    const template = document.querySelector('template')
-    const content = document.querySelector('#content')
-    content.innerHTML = ''
-
-    result.forEach(str => {
-        const clone = document.importNode(template.content, true)
-        const paragraph = clone.querySelector('p')
-        paragraph.innerHTML = `<code>.ph forge npc gossip text add</code> ${str}`
-
-        content.appendChild(clone)
+const addCommands = entries => {
+    const finalString = []
+    entries.forEach(([type, value]) => {
+        switch(type) {
+            case 'title':
+                finalString.push(`<code>.ph for npc goss tex add</code> [ ${value} ]`)
+                break;
+            case 'gossip':
+                const arr = splitString(value, 200).map((v, index) => {
+                    return `<code>.ph for npc goss tex add</code> ${index === 0 ? '$b$b' : ''}${v}`
+                })
+                finalString.push(...arr)
+                break;
+            case 'option':
+                finalString.push(`<code>.ph for npc goss opt add</code> — [ ${value} ]`)
+                break;
+        }
     })
+
+    return finalString
 }
