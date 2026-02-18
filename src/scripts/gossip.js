@@ -19,7 +19,7 @@ const handleSubmit = e => {
 }
 
 const splitString = (str, length) => {
-    if(str.length === 0) return null
+    if(str.length === 0) return []
 
     let words = str.match(/\S+/g)
     const arr= []
